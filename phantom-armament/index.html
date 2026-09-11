@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影之刃零影之武装系统解析 — 副武器分类与实战搭配思路</title>
+<meta name="description" content="《影之刃零》影之武装（副武器）系统详解：2主武器+2影之武装的装备机制，力量/远程/武学/奇术四大分类，以及为什么要在战斗中主动切换副武器。">
+<link rel="canonical" href="https://YOURDOMAIN.com/phantom-armament/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="影之刃零影之武装系统解析">
+<meta property="og:description" content="副武器怎么分类、怎么选、怎么用——影之武装系统全解析。">
+<meta property="og:url" content="https://YOURDOMAIN.com/phantom-armament/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "影之刃零影之武装系统解析",
+  "description": "《影之刃零》影之武装（副武器）系统详解：2主武器+2影之武装的装备机制，力量/远程/武学/奇术四大分类，以及为什么要在战斗中主动切换副武器。",
+  "url": "https://YOURDOMAIN.com/phantom-armament/",
+  "mainEntityOfPage": "https://YOURDOMAIN.com/phantom-armament/",
+  "dateModified": "2026-09-11"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "影之武装是什么？",
+      "acceptedAnswer": { "@type": "Answer", "text": "影之武装是《影之刃零》的副武器系统，与主武器不同，影之武装的使用次数受弹药/资源限制，通常用于打出爆发伤害或应对特定战斗局面，而非日常连招输出。" }
+    },
+    {
+      "@type": "Question",
+      "name": "一次能带几件影之武装？",
+      "acceptedAnswer": { "@type": "Answer", "text": "根据目前公开的战斗演示，主角同时装备2把主武器与2件影之武装，可在战斗中自由切换。" }
+    },
+    {
+      "@type": "Question",
+      "name": "影之武装一共分几类？",
+      "acceptedAnswer": { "@type": "Answer", "text": "目前已知的分类共4种：力量类、远程类、武学类、奇术类，分别对应不同的图标与战斗定位，其中奇术类目前公开内容最少。" }
+    }
+  ]
+}
+</script>
+<!-- TODO: Google Analytics — add gtag.js snippet here once a GA4 property exists for this site -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #100D0A; --surface:#1D1712; --surface-soft:#171310; --border:#382E22;
+    --ink:#EDE4D3; --ink-soft:#B8AD97; --ink-faint:#7A6F5C;
+    --primary:#9C2B22; --primary-soft:rgba(156,43,34,0.15);
+    --gold:#C9A257; --gold-soft: rgba(201,162,87,0.10);
+    --blue:#4E93B0; --blue-soft: rgba(78,147,176,0.14);
+    --font-display:'Noto Serif SC','Georgia',serif;
+    --font-body:'Noto Sans SC',system-ui,sans-serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+    --bg-alt: radial-gradient(1000px 600px at 90% -8%, rgba(156,43,34,0.18), transparent 62%), radial-gradient(800px 550px at 2% 100%, rgba(201,162,87,0.10), transparent 58%), radial-gradient(700px 450px at 8% 4%, rgba(78,147,176,0.12), transparent 60%);
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    background-image: var(--bg-alt);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: var(--font-body);
+    padding: 40px 20px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{ max-width: 760px; margin: 0 auto; }
+  .eyebrow{
+    font-family: var(--font-mono);
+    font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+    color: var(--gold); margin: 0 0 12px;
+  }
+  h1{
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(26px, 3.8vw, 34px); line-height: 1.4;
+    margin: 0 0 14px; letter-spacing: 0.01em;
+  }
+  .lede{ font-size: 15.5px; color: var(--ink-soft); line-height: 1.9; margin: 0 0 30px; }
+  h2{
+    font-family: var(--font-display); font-weight: 700; font-size: 19px;
+    margin: 38px 0 14px; color: var(--ink);
+  }
+  h3{
+    font-family: var(--font-display); font-weight: 700; font-size: 15.5px;
+    margin: 0 0 6px; color: var(--gold);
+  }
+  p{ font-size: 14.5px; line-height: 1.9; color: var(--ink); margin: 0 0 16px; }
+  ul, ol{ padding-left: 22px; margin: 0 0 16px; }
+  li{ font-size: 14.5px; line-height: 1.9; margin-bottom: 8px; }
+  li b{ color: var(--gold); }
+
+  table{ width:100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 13.5px; }
+  th,td{ text-align:left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th{ font-family: var(--font-display); font-size: 12.5px; color: var(--gold); font-weight: 700; }
+  td{ color: var(--ink-soft); }
+  td b{ color: var(--ink); }
+
+  .notice{
+    background: var(--primary-soft); border: 1.5px solid var(--primary); border-radius: 12px;
+    padding: 14px 18px; font-size: 13px; line-height: 1.8; margin: 0 0 24px; color: var(--ink-soft);
+  }
+  .callout{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 20px; margin: 24px 0;
+  }
+  .callout p{ margin: 0; }
+  .callout p + p{ margin-top: 10px; }
+
+  .diagram{
+    background: var(--surface-soft); border: 1px solid var(--border); border-radius: 14px;
+    padding: 20px 18px 14px; margin: 10px 0 26px;
+  }
+  .diagram svg{ display:block; width:100%; height:auto; }
+  .diagram-cap{
+    font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint);
+    text-align: center; margin-top: 10px; letter-spacing: 0.01em;
+  }
+  .dtext{ font-family: var(--font-body); }
+
+  .move-card{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px 20px; margin-bottom: 14px;
+  }
+  .move-card h3{ font-size: 15.5px; margin: 0 0 8px; }
+  .move-card p{ margin: 0 0 8px; font-size: 13.5px; color: var(--ink-soft); }
+  .move-card p:last-child{ margin-bottom: 0; }
+  .move-card.red{ border-color: var(--primary); }
+  .move-card.red h3{ color: var(--primary); }
+  .move-card.blue{ border-color: var(--blue); }
+  .move-card.blue h3{ color: var(--blue); }
+
+  .site-header{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 6px 16px; margin: 0 0 34px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  .site-header .brand{
+    font-family: var(--font-display); font-weight: 700; font-size: 15px;
+    color: var(--ink); text-decoration: none; letter-spacing: 0.01em; white-space: nowrap; padding: 10px 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .brand-mark{ color: var(--gold); flex-shrink: 0; }
+  .site-nav{ display: flex; gap: 2px; flex-wrap: wrap; }
+  .nav-group{ position: relative; }
+  .nav-trigger{
+    font-family: var(--font-body); font-size: 13.5px; font-weight: 600;
+    letter-spacing: 0.02em; color: var(--ink-soft); background: none; border: none;
+    cursor: pointer; padding: 10px 10px; border-radius: 8px;
+  }
+  .nav-trigger:hover, .nav-group:focus-within .nav-trigger{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  .nav-menu{
+    display: none; position: absolute; top: 100%; right: 0; z-index: 20;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 8px; min-width: 220px; box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+  }
+  .nav-group:hover .nav-menu, .nav-group:focus-within .nav-menu{ display: block; }
+  .nav-menu a{
+    display: block; font-family: var(--font-body); font-size: 13.5px; font-weight: 500;
+    color: var(--ink-soft); text-decoration: none; padding: 8px 10px; border-radius: 6px;
+  }
+  .nav-menu a:hover{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  @media (max-width: 720px){
+    .site-nav{ width: 100%; flex-direction: column; gap: 0; }
+    .nav-group{ width: 100%; }
+    .nav-trigger{ width: 100%; text-align: left; }
+    .nav-menu{ display: block; position: static; box-shadow: none; border: none; background: none; padding: 0 0 6px 14px; min-width: 0; }
+  }
+
+  footer{ margin-top: 50px; font-size: 12px; color: var(--ink-faint); line-height: 1.8; }
+  footer a{ color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="site-header">
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 L15 12.5 L12 21.5 L9 12.5 Z"/><circle cx="12" cy="7.5" r="1.3" fill="currentColor" stroke="none"/></svg>影之刃零攻略站</a>
+    <nav class="site-nav">
+      <div class="nav-group">
+        <button type="button" class="nav-trigger">新手向导</button>
+        <div class="nav-menu">
+          <a href="/pc-requirements/">PC配置需求详解</a>
+          <a href="/difficulty/">难度模式对比</a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-trigger">战斗系统</button>
+        <div class="nav-menu">
+          <a href="/killing-intent/">杀气槽机制详解</a>
+          <a href="/phantom-armament/">影之武装系统解析</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <p class="eyebrow">影之刃零 · 战斗系统</p>
+  <h1>影之武装系统解析：副武器怎么选、怎么用</h1>
+  <p class="lede">《影之刃零》的武器分两层：日常连招靠主武器，但真正决定战斗上限的是"影之武装"——一套弹药受限、关键时刻才拿出来的副武器系统。这篇讲清楚影之武装的装备机制、四大分类，以及为什么高手都会在战斗中主动切换它，而不是无脑打主武器连招。</p>
+
+  <div class="notice">
+    本文关于影之武装的分类与装备机制，综合自官方战斗演示视频与多家媒体的发布会解析报道（时间集中在2026年上半年）。目前官方尚未公开完整的武器列表与具体数值（伤害、弹药上限、冷却时间等），本文只呈现已经过多方报道交叉印证的系统性内容，不臆测未公开的数值，具体清单会在游戏正式发售（2026年10月29日）后补充。
+  </div>
+
+  <h2>装备机制：2主武器 + 2影之武装</h2>
+  <p>主角魂在战斗中可以同时携带<b>2把主武器</b>与<b>2件影之武装</b>，并在战斗过程中随时切换。主武器（如长剑、环刃、大刀、软剑等）负责日常的连段输出，没有使用次数限制；影之武装则相反——每一件都有明确的<b>使用次数/资源限制</b>，官方公开的武器库规模为主武器30余种、影之武装（副武器）25种，是本作武器系统里数量更庞大、也更强调"临场判断"的那一层。</p>
+
+  <div class="diagram">
+    <svg viewBox="0 0 700 150" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="35" width="150" height="70" rx="8" fill="#1D1712" stroke="#332C26" stroke-width="1.5"/>
+      <text x="85" y="63" text-anchor="middle" class="dtext" font-size="12.5" fill="#EDE6DA" font-weight="700">主武器 1</text>
+      <text x="85" y="83" text-anchor="middle" class="dtext" font-size="9.5" fill="#B8AD97">无限使用</text>
+
+      <rect x="175" y="35" width="150" height="70" rx="8" fill="#1D1712" stroke="#332C26" stroke-width="1.5"/>
+      <text x="250" y="63" text-anchor="middle" class="dtext" font-size="12.5" fill="#EDE6DA" font-weight="700">主武器 2</text>
+      <text x="250" y="83" text-anchor="middle" class="dtext" font-size="9.5" fill="#B8AD97">无限使用</text>
+
+      <line x1="345" y1="25" x2="345" y2="115" stroke="#382E22" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+      <rect x="365" y="35" width="160" height="70" rx="8" fill="#1D1712" stroke="#C9A257" stroke-width="1.5"/>
+      <text x="445" y="63" text-anchor="middle" class="dtext" font-size="12.5" fill="#C9A257" font-weight="700">影之武装 1</text>
+      <text x="445" y="83" text-anchor="middle" class="dtext" font-size="9.5" fill="#B8AD97">弹药/资源限制</text>
+
+      <rect x="540" y="35" width="160" height="70" rx="8" fill="#1D1712" stroke="#C9A257" stroke-width="1.5"/>
+      <text x="620" y="63" text-anchor="middle" class="dtext" font-size="12.5" fill="#C9A257" font-weight="700">影之武装 2</text>
+      <text x="620" y="83" text-anchor="middle" class="dtext" font-size="9.5" fill="#B8AD97">弹药/资源限制</text>
+    </svg>
+    <p class="diagram-cap">同时携带的4件装备——左侧主武器无限使用，右侧影之武装受资源限制</p>
+  </div>
+
+  <h2>四大分类</h2>
+  <p>目前已知的影之武装共分4大类，每类对应不同的图标与战斗定位：</p>
+
+  <div class="move-card">
+    <h3>力量类（图标：大斧）</h3>
+    <p>近战向的重型副武器，强调单次输出的爆发力，公开演示中出现过巨凶斧、长柄金瓜一类的重武器，预告片里也出现过长柄枪矛类的重型武器画面。</p>
+  </div>
+  <div class="move-card blue">
+    <h3>远程类（图标：弓箭）</h3>
+    <p>攻击距离明显高于近战武器，用于拉开距离输出或处理近战难以覆盖的目标，公开报道中提到过弓箭、火炮类的远程副武器。</p>
+  </div>
+  <div class="move-card">
+    <h3>武学类（图标：双镰刀）</h3>
+    <p>带有特殊招式的奇门兵器，更强调招式本身的功能性（如破防、控场），而非单纯的数值输出。</p>
+  </div>
+  <div class="move-card red">
+    <h3>奇术类（图标：铃铛）</h3>
+    <p>目前公开内容最少的一类，早期预告片中曾出现一件铃铛类的道具型副武器，具体机制官方尚未详细说明，仍需等待发售后补充。</p>
+  </div>
+
+  <h2>实战定位：为什么要主动切换影之武装</h2>
+  <p>影之武装不是"备用武器"，而是解决特定局面的工具：</p>
+  <ul>
+    <li><b>打输出窗口：</b> 在敌人硬直、破防等最佳输出时机，用影之武装打出比主武器连招更高的爆发伤害；</li>
+    <li><b>应对特定局面：</b> 面对远距离目标、范围伤害需求，或是主武器覆盖不到的场景，切换到对应类型的影之武装能更高效地解决问题；</li>
+    <li><b>攻守兼备：</b> 部分影之武装同时具备防御功能，并非纯粹的输出工具。</li>
+  </ul>
+  <p>结合<a href="/killing-intent/">杀气槽机制</a>来看，影之武装的弹药限制意味着不能无脑打出，更适合留到完美格挡触发"鬼步"之后的输出窗口，或是逆天者难度下敌人被动态AI逼出破绽的瞬间——这也是为什么熟练玩家会把影之武装的切换节奏，看作和红光/蓝光判断同等重要的操作层。</p>
+
+  <div class="callout">
+    <p><b>实用建议：</b> 影之武装的具体数值（弹药上限、冷却、伤害倍率）官方还没有公开，建议正式发售后先在低强度战斗里试用每一类影之武装，摸清资源消耗速度，再决定固定搭配——不同分类之间没有绝对的强弱，更多是看你想用它解决哪一类具体问题。</p>
+  </div>
+
+  <h2>常见问题</h2>
+  <p><b>影之武装是什么？</b><br>《影之刃零》的副武器系统，使用次数受弹药/资源限制，用于打爆发伤害或应对特定局面，与无限使用的主武器互补。</p>
+  <p><b>一次能带几件影之武装？</b><br>目前公开的战斗演示显示是2件，与2把主武器同时装备，可在战斗中自由切换。</p>
+  <p><b>影之武装一共分几类？</b><br>4类：力量类、远程类、武学类、奇术类，目前奇术类公开内容最少。</p>
+
+  <footer>
+    本站为非官方粉丝制作攻略站，与灵游坊工作室（S-GAME）无任何关联。本文基于游戏发售前的官方演示与媒体报道整理，具体机制、数值与武器列表以正式版为准，我们会在发售后更新实测内容。<a href="/">返回攻略站首页 →</a>
+  </footer>
+</div>
+</body>
+</html>
