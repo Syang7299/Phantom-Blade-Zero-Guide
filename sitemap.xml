@@ -1,33 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://YOURDOMAIN.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://YOURDOMAIN.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/en/"/>
   </url>
   <url>
     <loc>https://YOURDOMAIN.com/pc-requirements/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://YOURDOMAIN.com/pc-requirements/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/en/pc-requirements/"/>
   </url>
   <url>
     <loc>https://YOURDOMAIN.com/killing-intent/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://YOURDOMAIN.com/killing-intent/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/en/sha-chi-guide/"/>
   </url>
   <url>
     <loc>https://YOURDOMAIN.com/difficulty/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://YOURDOMAIN.com/difficulty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/en/difficulty-guide/"/>
   </url>
   <url>
     <loc>https://YOURDOMAIN.com/phantom-armament/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://YOURDOMAIN.com/phantom-armament/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/en/phantom-edges/"/>
   </url>
   <url>
     <loc>https://YOURDOMAIN.com/wukong-comparison/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://YOURDOMAIN.com/wukong-comparison/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/en/black-myth-wukong-comparison/"/>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/en/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://YOURDOMAIN.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/en/"/>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/en/pc-requirements/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://YOURDOMAIN.com/pc-requirements/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/en/pc-requirements/"/>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/en/sha-chi-guide/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://YOURDOMAIN.com/killing-intent/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/en/sha-chi-guide/"/>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/en/difficulty-guide/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://YOURDOMAIN.com/difficulty/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/en/difficulty-guide/"/>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/en/phantom-edges/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://YOURDOMAIN.com/phantom-armament/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/en/phantom-edges/"/>
+  </url>
+  <url>
+    <loc>https://YOURDOMAIN.com/en/black-myth-wukong-comparison/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://YOURDOMAIN.com/wukong-comparison/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/en/black-myth-wukong-comparison/"/>
   </url>
 </urlset>

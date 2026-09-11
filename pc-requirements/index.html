@@ -6,6 +6,9 @@
 <title>影之刃零PC配置需求详解 — 最低/推荐配置全解析</title>
 <meta name="description" content="《影之刃零》PC配置需求详解——最低配置GTX 1660可玩，推荐配置RTX 3060 Ti畅玩2K60帧，完整硬件清单与优化建议。">
 <link rel="canonical" href="https://YOURDOMAIN.com/pc-requirements/">
+<link rel="alternate" hreflang="zh" href="https://YOURDOMAIN.com/pc-requirements/">
+<link rel="alternate" hreflang="en" href="https://YOURDOMAIN.com/en/pc-requirements/">
+<link rel="alternate" hreflang="x-default" href="https://YOURDOMAIN.com/en/pc-requirements/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="影之刃零PC配置需求详解">
 <meta property="og:description" content="最低配置GTX 1660可玩，推荐配置RTX 3060 Ti畅玩2K60帧。">
@@ -157,11 +160,20 @@
     color: var(--ink-soft); text-decoration: none; padding: 8px 10px; border-radius: 6px;
   }
   .nav-menu a:hover{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  .header-right{ display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+  .lang-switch{ display: flex; gap: 2px; border-left: 1px solid var(--border); padding-left: 8px; margin-left: 4px; }
+  .lang-switch a{
+    font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.03em;
+    padding: 7px 9px; border-radius: 7px; text-decoration: none; color: var(--ink-faint);
+  }
+  .lang-switch a:hover{ color: var(--gold); }
+  .lang-switch a.active{ color: var(--gold); background: rgba(201,162,87,0.10); }
   @media (max-width: 720px){
     .site-nav{ width: 100%; flex-direction: column; gap: 0; }
     .nav-group{ width: 100%; }
     .nav-trigger{ width: 100%; text-align: left; }
     .nav-menu{ display: block; position: static; box-shadow: none; border: none; background: none; padding: 0 0 6px 14px; min-width: 0; }
+    .header-right{ width: 100%; justify-content: space-between; }
   }
 
   footer{ margin-top: 50px; font-size: 12px; color: var(--ink-faint); line-height: 1.8; }
@@ -172,6 +184,7 @@
 <div class="wrap">
   <div class="site-header">
     <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 L15 12.5 L12 21.5 L9 12.5 Z"/><circle cx="12" cy="7.5" r="1.3" fill="currentColor" stroke="none"/></svg>影之刃零攻略站</a>
+    <div class="header-right">
     <nav class="site-nav">
       <div class="nav-group">
         <button type="button" class="nav-trigger">新手向导</button>
@@ -189,6 +202,11 @@
         </div>
       </div>
     </nav>
+    <div class="lang-switch">
+      <a href="/pc-requirements/" class="active">中文</a>
+      <a href="/en/pc-requirements/">EN</a>
+    </div>
+    </div>
   </div>
 
   <p class="eyebrow">影之刃零 · 新手向导</p>
