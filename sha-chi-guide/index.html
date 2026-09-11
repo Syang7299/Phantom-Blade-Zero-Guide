@@ -51,18 +51,19 @@
 <!-- TODO: Google Analytics — add gtag.js snippet here once a GA4 property exists for this site -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #100D0A; --surface:#1D1712; --surface-soft:#171310; --border:#382E22;
-    --ink:#EDE4D3; --ink-soft:#B8AD97; --ink-faint:#7A6F5C;
-    --primary:#9C2B22; --primary-soft:rgba(156,43,34,0.15);
-    --gold:#C9A257; --gold-soft: rgba(201,162,87,0.10);
-    --blue:#4E93B0; --blue-soft: rgba(78,147,176,0.14);
-    --font-display:'Cinzel','Georgia',serif;
-    --font-body:'Inter',system-ui,sans-serif;
+    --bg: #0B0F11; --surface:#161C1F; --surface-soft:#101517; --border:#2A3336;
+    --ink:#E9EEEF; --ink-soft:#9FB0B3; --ink-faint:#5C6C6F;
+    --primary:#B33A2E; --primary-soft:rgba(179,58,46,0.14);
+    --ember:#D98A4E; --ember-soft: rgba(217,138,78,0.12);
+    --blue:#5A9BB5; --blue-soft: rgba(90,155,181,0.14);
+    --accent: var(--blue); --accent-soft: var(--blue-soft);
+    --font-display:'Oswald','Arial Narrow',sans-serif;
+    --font-body:'IBM Plex Sans',system-ui,sans-serif;
     --font-mono:'IBM Plex Mono',ui-monospace,monospace;
-    --bg-alt: radial-gradient(1000px 600px at 90% -8%, rgba(156,43,34,0.18), transparent 62%), radial-gradient(800px 550px at 2% 100%, rgba(201,162,87,0.10), transparent 58%), radial-gradient(700px 450px at 8% 4%, rgba(78,147,176,0.12), transparent 60%);
+    --bg-alt: radial-gradient(1000px 600px at 90% -8%, rgba(90,155,181,0.18), transparent 62%), radial-gradient(800px 550px at 2% 100%, rgba(217,138,78,0.08), transparent 58%), radial-gradient(700px 450px at 8% 4%, rgba(90,155,181,0.10), transparent 60%);
   }
   *{ box-sizing:border-box; }
   html,body{ margin:0; padding:0; }
@@ -79,45 +80,45 @@
   .eyebrow{
     font-family: var(--font-mono);
     font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
-    color: var(--gold); margin: 0 0 12px; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 12px; text-transform: uppercase;
   }
   h1{
-    font-family: var(--font-display); font-weight: 900;
-    font-size: clamp(25px, 3.6vw, 32px); line-height: 1.35;
-    margin: 0 0 14px; letter-spacing: 0.01em;
+    font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
+    font-size: clamp(26px, 3.8vw, 34px); line-height: 1.25;
+    margin: 0 0 14px; letter-spacing: 0.005em;
   }
   .lede{ font-size: 15.5px; color: var(--ink-soft); line-height: 1.85; margin: 0 0 30px; }
   h2{
-    font-family: var(--font-display); font-weight: 700; font-size: 18px;
-    margin: 38px 0 14px; color: var(--ink);
+    font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: 19px;
+    margin: 38px 0 14px; color: var(--ink); letter-spacing: 0.02em;
   }
   h3{
-    font-family: var(--font-display); font-weight: 700; font-size: 15px;
-    margin: 0 0 6px; color: var(--gold);
+    font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: 15px;
+    margin: 0 0 6px; color: var(--accent); letter-spacing: 0.02em;
   }
   p{ font-size: 14.5px; line-height: 1.85; color: var(--ink); margin: 0 0 16px; }
   ul, ol{ padding-left: 22px; margin: 0 0 16px; }
   li{ font-size: 14.5px; line-height: 1.85; margin-bottom: 8px; }
-  li b{ color: var(--gold); }
+  li b{ color: var(--accent); }
 
   table{ width:100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 13.5px; }
   th,td{ text-align:left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th{ font-family: var(--font-display); font-size: 12.5px; color: var(--gold); font-weight: 700; }
+  th{ font-family: var(--font-mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.03em; color: var(--accent); font-weight: 700; }
   td{ color: var(--ink-soft); }
   td b{ color: var(--ink); }
 
   .notice{
-    background: var(--primary-soft); border: 1.5px solid var(--primary); border-radius: 12px;
+    background: var(--primary-soft); border: 1px solid var(--primary); border-left: 3px solid var(--primary); border-radius: 3px;
     padding: 14px 18px; font-size: 13px; line-height: 1.75; margin: 0 0 24px; color: var(--ink-soft);
   }
   .callout{
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 3px;
     padding: 18px 20px; margin: 24px 0;
   }
   .callout p{ margin: 0; }
 
   .diagram{
-    background: var(--surface-soft); border: 1px solid var(--border); border-radius: 14px;
+    background: var(--surface-soft); border: 1px solid var(--border); border-radius: 3px;
     padding: 20px 18px 14px; margin: 10px 0 26px;
   }
   .diagram svg{ display:block; width:100%; height:auto; }
@@ -128,8 +129,9 @@
   .dtext{ font-family: var(--font-body); }
 
   .move-card{
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 3px;
     padding: 16px 20px; margin-bottom: 14px;
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
   }
   .move-card h3{ font-size: 15px; margin: 0 0 8px; }
   .move-card p{ margin: 0 0 8px; font-size: 13.5px; color: var(--ink-soft); }
@@ -140,43 +142,43 @@
   .move-card.blue h3{ color: var(--blue); }
 
   .site-header{
-    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 4px; border-top: 2px solid var(--blue);
     padding: 6px 16px; margin: 0 0 34px;
     display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
   }
   .site-header .brand{
-    font-family: var(--font-display); font-weight: 700; font-size: 14px;
-    color: var(--ink); text-decoration: none; letter-spacing: 0.01em; white-space: nowrap; padding: 10px 0;
+    font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: 14px;
+    color: var(--ink); text-decoration: none; letter-spacing: 0.02em; white-space: nowrap; padding: 10px 0;
     display: flex; align-items: center; gap: 8px;
   }
-  .brand-mark{ color: var(--gold); flex-shrink: 0; }
+  .brand-mark{ color: var(--blue); flex-shrink: 0; }
   .header-right{ display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
   .site-nav{ display: flex; gap: 2px; flex-wrap: wrap; }
   .nav-group{ position: relative; }
   .nav-trigger{
     font-family: var(--font-body); font-size: 13.5px; font-weight: 600;
     letter-spacing: 0.01em; color: var(--ink-soft); background: none; border: none;
-    cursor: pointer; padding: 10px 10px; border-radius: 8px;
+    cursor: pointer; padding: 10px 10px; border-radius: 3px;
   }
-  .nav-trigger:hover, .nav-group:focus-within .nav-trigger{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  .nav-trigger:hover, .nav-group:focus-within .nav-trigger{ color: var(--blue); background: var(--blue-soft); }
   .nav-menu{
     display: none; position: absolute; top: 100%; right: 0; z-index: 20;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 3px;
     padding: 8px; min-width: 220px; box-shadow: 0 12px 28px rgba(0,0,0,0.5);
   }
   .nav-group:hover .nav-menu, .nav-group:focus-within .nav-menu{ display: block; }
   .nav-menu a{
     display: block; font-family: var(--font-body); font-size: 13.5px; font-weight: 500;
-    color: var(--ink-soft); text-decoration: none; padding: 8px 10px; border-radius: 6px;
+    color: var(--ink-soft); text-decoration: none; padding: 8px 10px; border-radius: 3px;
   }
-  .nav-menu a:hover{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  .nav-menu a:hover{ color: var(--blue); background: var(--blue-soft); }
   .lang-switch{ display: flex; gap: 2px; border-left: 1px solid var(--border); padding-left: 8px; margin-left: 4px; }
   .lang-switch a{
     font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.03em;
-    padding: 7px 9px; border-radius: 7px; text-decoration: none; color: var(--ink-faint);
+    padding: 7px 9px; border-radius: 3px; text-decoration: none; color: var(--ink-faint);
   }
-  .lang-switch a:hover{ color: var(--gold); }
-  .lang-switch a.active{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  .lang-switch a:hover{ color: var(--blue); }
+  .lang-switch a.active{ color: var(--blue); background: var(--blue-soft); }
   @media (max-width: 720px){
     .site-nav{ width: 100%; flex-direction: column; gap: 0; }
     .nav-group{ width: 100%; }
@@ -186,13 +188,13 @@
   }
 
   footer{ margin-top: 50px; font-size: 12px; color: var(--ink-faint); line-height: 1.8; }
-  footer a{ color: var(--gold); }
+  footer a{ color: var(--blue); }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="site-header">
-    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 L15 12.5 L12 21.5 L9 12.5 Z"/><circle cx="12" cy="7.5" r="1.3" fill="currentColor" stroke="none"/></svg>Phantom Blade Zero Guide</a>
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 L20 20 M4 20 L20 4" opacity="0.35"/><path d="M12 3 L12 21"/></svg>Phantom Blade Zero Guide</a>
     <div class="header-right">
       <nav class="site-nav">
         <div class="nav-group">
@@ -242,42 +244,42 @@
 
   <div class="diagram">
     <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
-      <rect x="10" y="20" width="130" height="60" rx="8" fill="#1D1712" stroke="#9C2B22" stroke-width="1.5"/>
-      <text x="75" y="45" text-anchor="middle" class="dtext" font-size="12" fill="#EDE6DA" font-weight="700">Killer Move</text>
-      <text x="75" y="64" text-anchor="middle" class="dtext" font-size="9" fill="#B8AD97">unblockable</text>
+      <rect x="10" y="20" width="130" height="60" rx="3" fill="#161C1F" stroke="#B33A2E" stroke-width="1.5"/>
+      <text x="75" y="45" text-anchor="middle" class="dtext" font-size="12" fill="#E9EEEF" font-weight="700">Killer Move</text>
+      <text x="75" y="64" text-anchor="middle" class="dtext" font-size="9" fill="#9FB0B3">unblockable</text>
 
-      <path d="M145 50 L173 50" stroke="#7A6F5C" stroke-width="2"/>
-      <path d="M173 50 L164 45 L164 55 Z" fill="#7A6F5C"/>
+      <path d="M145 50 L173 50" stroke="#5C6C6F" stroke-width="2"/>
+      <path d="M173 50 L164 45 L164 55 Z" fill="#5C6C6F"/>
 
-      <rect x="178" y="20" width="140" height="60" rx="8" fill="#1D1712" stroke="#332C26" stroke-width="1.5"/>
-      <text x="248" y="45" text-anchor="middle" class="dtext" font-size="12" fill="#EDE6DA" font-weight="700">R1 perfect dodge</text>
-      <text x="248" y="64" text-anchor="middle" class="dtext" font-size="9" fill="#B8AD97">only option</text>
+      <rect x="178" y="20" width="140" height="60" rx="3" fill="#161C1F" stroke="#2A3336" stroke-width="1.5"/>
+      <text x="248" y="45" text-anchor="middle" class="dtext" font-size="12" fill="#E9EEEF" font-weight="700">R1 perfect dodge</text>
+      <text x="248" y="64" text-anchor="middle" class="dtext" font-size="9" fill="#9FB0B3">only option</text>
 
-      <rect x="10" y="140" width="130" height="60" rx="8" fill="#1D1712" stroke="#4E93B0" stroke-width="1.5"/>
-      <text x="75" y="165" text-anchor="middle" class="dtext" font-size="12" fill="#EDE6DA" font-weight="700">Brutal Move</text>
-      <text x="75" y="184" text-anchor="middle" class="dtext" font-size="9" fill="#B8AD97">block or dodge</text>
+      <rect x="10" y="140" width="130" height="60" rx="3" fill="#161C1F" stroke="#5A9BB5" stroke-width="1.5"/>
+      <text x="75" y="165" text-anchor="middle" class="dtext" font-size="12" fill="#E9EEEF" font-weight="700">Brutal Move</text>
+      <text x="75" y="184" text-anchor="middle" class="dtext" font-size="9" fill="#9FB0B3">block or dodge</text>
 
-      <path d="M145 170 L173 170" stroke="#7A6F5C" stroke-width="2"/>
-      <path d="M173 170 L164 165 L164 175 Z" fill="#7A6F5C"/>
+      <path d="M145 170 L173 170" stroke="#5C6C6F" stroke-width="2"/>
+      <path d="M173 170 L164 165 L164 175 Z" fill="#5C6C6F"/>
 
-      <rect x="178" y="140" width="140" height="60" rx="8" fill="#1D1712" stroke="#332C26" stroke-width="1.5"/>
-      <text x="248" y="165" text-anchor="middle" class="dtext" font-size="12" fill="#EDE6DA" font-weight="700">L1 perfect block</text>
-      <text x="248" y="184" text-anchor="middle" class="dtext" font-size="9" fill="#B8AD97">best payoff</text>
+      <rect x="178" y="140" width="140" height="60" rx="3" fill="#161C1F" stroke="#2A3336" stroke-width="1.5"/>
+      <text x="248" y="165" text-anchor="middle" class="dtext" font-size="12" fill="#E9EEEF" font-weight="700">L1 perfect block</text>
+      <text x="248" y="184" text-anchor="middle" class="dtext" font-size="9" fill="#9FB0B3">best payoff</text>
 
-      <path d="M323 50 L350 110" stroke="#7A6F5C" stroke-width="2"/>
-      <path d="M323 170 L350 110" stroke="#7A6F5C" stroke-width="2"/>
-      <path d="M350 110 L342 100 L358 100 Z" fill="#7A6F5C" transform="rotate(90 350 110)"/>
+      <path d="M323 50 L350 110" stroke="#5C6C6F" stroke-width="2"/>
+      <path d="M323 170 L350 110" stroke="#5C6C6F" stroke-width="2"/>
+      <path d="M350 110 L342 100 L358 100 Z" fill="#5C6C6F" transform="rotate(90 350 110)"/>
 
-      <rect x="360" y="80" width="140" height="60" rx="8" fill="#1D1712" stroke="#C9A257" stroke-width="1.5"/>
-      <text x="430" y="105" text-anchor="middle" class="dtext" font-size="12" fill="#C9A257" font-weight="700">Ghoststep</text>
-      <text x="430" y="124" text-anchor="middle" class="dtext" font-size="9" fill="#B8AD97">smoke-step behind enemy</text>
+      <rect x="360" y="80" width="140" height="60" rx="3" fill="#161C1F" stroke="#D98A4E" stroke-width="1.5"/>
+      <text x="430" y="105" text-anchor="middle" class="dtext" font-size="12" fill="#D98A4E" font-weight="700">Ghoststep</text>
+      <text x="430" y="124" text-anchor="middle" class="dtext" font-size="9" fill="#9FB0B3">smoke-step behind enemy</text>
 
-      <path d="M505 110 L528 110" stroke="#7A6F5C" stroke-width="2"/>
-      <path d="M528 110 L519 105 L519 115 Z" fill="#7A6F5C"/>
+      <path d="M505 110 L528 110" stroke="#5C6C6F" stroke-width="2"/>
+      <path d="M528 110 L519 105 L519 115 Z" fill="#5C6C6F"/>
 
-      <rect x="533" y="80" width="160" height="60" rx="8" fill="#1D1712" stroke="#C9A257" stroke-width="1.5"/>
-      <text x="613" y="100" text-anchor="middle" class="dtext" font-size="10.5" fill="#EDE6DA" font-weight="700">Brutal Move perfect block bonus</text>
-      <text x="613" y="120" text-anchor="middle" class="dtext" font-size="9" fill="#C9A257" font-weight="700">drains enemy Sha-Chi + fills yours</text>
+      <rect x="533" y="80" width="160" height="60" rx="3" fill="#161C1F" stroke="#D98A4E" stroke-width="1.5"/>
+      <text x="613" y="100" text-anchor="middle" class="dtext" font-size="10.5" fill="#E9EEEF" font-weight="700">Brutal Move perfect block bonus</text>
+      <text x="613" y="120" text-anchor="middle" class="dtext" font-size="9" fill="#D98A4E" font-weight="700">drains enemy Sha-Chi + fills yours</text>
     </svg>
     <p class="diagram-cap">Killer Moves can only be dodged; Brutal Moves can be blocked or dodged - a perfect response to either triggers Ghoststep</p>
   </div>

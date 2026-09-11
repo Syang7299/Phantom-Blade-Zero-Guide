@@ -27,25 +27,25 @@
 <!-- TODO: Google AdSense — add once the site has enough traffic/history to apply -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #100D0A;
-    --bg-alt: radial-gradient(1000px 600px at 90% -8%, rgba(156,43,34,0.18), transparent 62%), radial-gradient(800px 550px at 2% 100%, rgba(201,162,87,0.10), transparent 58%), radial-gradient(700px 450px at 8% 4%, rgba(78,147,176,0.12), transparent 60%);
-    --surface: #1D1712;
-    --surface-soft: #171310;
-    --border: #382E22;
-    --ink: #EDE4D3;
-    --ink-soft: #B8AD97;
-    --ink-faint: #7A6F5C;
-    --primary: #9C2B22;
-    --primary-soft: rgba(156,43,34,0.15);
-    --gold: #C9A257;
-    --gold-soft: rgba(201,162,87,0.10);
-    --blue: #4E93B0;
-    --blue-soft: rgba(78,147,176,0.14);
-    --font-display: 'Cinzel', 'Georgia', serif;
-    --font-body: 'Inter', system-ui, sans-serif;
+    --bg: #0B0F11;
+    --bg-alt: radial-gradient(1000px 620px at 92% -10%, rgba(90,155,181,0.20), transparent 62%), radial-gradient(800px 550px at 0% 105%, rgba(217,138,78,0.09), transparent 58%), radial-gradient(650px 420px at 10% 0%, rgba(90,155,181,0.10), transparent 60%);
+    --surface: #161C1F;
+    --surface-soft: #101517;
+    --border: #2A3336;
+    --ink: #E9EEEF;
+    --ink-soft: #9FB0B3;
+    --ink-faint: #5C6C6F;
+    --blue: #5A9BB5;
+    --blue-soft: rgba(90,155,181,0.14);
+    --ember: #D98A4E;
+    --ember-soft: rgba(217,138,78,0.12);
+    --red: #B33A2E;
+    --red-soft: rgba(179,58,46,0.14);
+    --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+    --font-body: 'IBM Plex Sans', system-ui, sans-serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
   }
 
@@ -65,43 +65,44 @@
   .wrap{ max-width: 1060px; margin: 0 auto; }
 
   .site-header{
-    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 4px;
     padding: 6px 16px; margin: 0 0 34px;
     display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    border-top: 2px solid var(--blue);
   }
   .site-header .brand{
-    font-family: var(--font-display); font-weight: 700; font-size: 15px;
-    color: var(--ink); text-decoration: none; letter-spacing: 0.01em; white-space: nowrap; padding: 10px 0;
+    font-family: var(--font-display); font-weight: 600; font-size: 16px; text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--ink); text-decoration: none; white-space: nowrap; padding: 10px 0;
     display: flex; align-items: center; gap: 8px;
   }
-  .brand-mark{ color: var(--gold); flex-shrink: 0; }
+  .brand-mark{ color: var(--blue); flex-shrink: 0; }
   .header-right{ display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
   .site-nav{ display: flex; gap: 2px; flex-wrap: wrap; }
   .nav-group{ position: relative; }
   .nav-trigger{
     font-family: var(--font-body); font-size: 13.5px; font-weight: 600;
     letter-spacing: 0.01em; color: var(--ink-soft); background: none; border: none;
-    cursor: pointer; padding: 10px 10px; border-radius: 8px;
+    cursor: pointer; padding: 10px 10px; border-radius: 3px;
   }
-  .nav-trigger:hover, .nav-group:focus-within .nav-trigger{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  .nav-trigger:hover, .nav-group:focus-within .nav-trigger{ color: var(--blue); background: var(--blue-soft); }
   .nav-menu{
     display: none; position: absolute; top: 100%; right: 0; z-index: 20;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 3px;
     padding: 8px; min-width: 220px; box-shadow: 0 12px 28px rgba(0,0,0,0.5);
   }
   .nav-group:hover .nav-menu, .nav-group:focus-within .nav-menu{ display: block; }
   .nav-menu a{
     display: block; font-family: var(--font-body); font-size: 13.5px; font-weight: 500;
-    color: var(--ink-soft); text-decoration: none; padding: 8px 10px; border-radius: 6px;
+    color: var(--ink-soft); text-decoration: none; padding: 8px 10px; border-radius: 3px;
   }
-  .nav-menu a:hover{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  .nav-menu a:hover{ color: var(--blue); background: var(--blue-soft); }
   .lang-switch{ display: flex; gap: 2px; border-left: 1px solid var(--border); padding-left: 8px; margin-left: 4px; }
   .lang-switch a{
     font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.03em;
-    padding: 7px 9px; border-radius: 7px; text-decoration: none; color: var(--ink-faint);
+    padding: 7px 9px; border-radius: 3px; text-decoration: none; color: var(--ink-faint);
   }
-  .lang-switch a:hover{ color: var(--gold); }
-  .lang-switch a.active{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  .lang-switch a:hover{ color: var(--blue); }
+  .lang-switch a.active{ color: var(--blue); background: var(--blue-soft); }
   @media (max-width: 720px){
     .site-nav{ width: 100%; flex-direction: column; gap: 0; }
     .nav-group{ width: 100%; }
@@ -112,7 +113,7 @@
 
   .hero-wrap{ position: relative; margin-bottom: 34px; }
   .hero-decor{
-    position: absolute; top: -20px; right: 0; width: 230px; height: 250px;
+    position: absolute; top: -10px; right: 0; width: 260px; height: 240px;
     pointer-events: none; z-index: 0;
   }
   .hero-decor svg{ width: 100%; height: 100%; display: block; }
@@ -121,16 +122,17 @@
   .eyebrow{
     font-family: var(--font-mono);
     font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
-    color: var(--gold); margin: 0 0 12px; text-transform: uppercase;
+    color: var(--blue); margin: 0 0 12px; text-transform: uppercase;
   }
   h1{
     font-family: var(--font-display);
-    font-weight: 900;
-    font-size: clamp(32px, 4.6vw, 46px);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: clamp(32px, 4.6vw, 48px);
     color: var(--ink);
     margin: 0 0 14px;
     letter-spacing: 0.01em;
-    line-height: 1.2;
+    line-height: 1.15;
   }
   header.hero p{
     color: var(--ink-soft);
@@ -144,13 +146,13 @@
   .fact-pill{
     font-family: var(--font-body); font-size: 12.5px; font-weight: 500;
     color: var(--ink-soft); background: var(--surface); border: 1px solid var(--border);
-    border-radius: 999px; padding: 7px 14px;
+    border-radius: 3px; padding: 7px 14px;
   }
-  .fact-pill b{ color: var(--gold); font-weight: 600; }
+  .fact-pill b{ color: var(--ember); font-weight: 600; }
 
   .section-title{
-    font-family: var(--font-display); font-size: 21px; font-weight: 700;
-    color: var(--ink); margin: 46px 0 18px; letter-spacing: 0.01em;
+    font-family: var(--font-display); text-transform: uppercase; font-size: 20px; font-weight: 600;
+    color: var(--ink); margin: 46px 0 18px; letter-spacing: 0.04em;
   }
 
   .guide-section{ margin-bottom: 40px; }
@@ -159,37 +161,39 @@
     margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
   }
   .guide-section-head h3{
-    font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--ink); margin: 0;
+    font-family: var(--font-display); text-transform: uppercase; font-size: 15px; font-weight: 600; color: var(--ink); margin: 0; letter-spacing: 0.03em;
   }
   .guide-section-head p{ font-family: var(--font-body); font-size: 12.5px; color: var(--ink-faint); margin: 0; }
+  .guide-section-head h3{ color: var(--ember); }
   .guide-section--combat .guide-section-head h3{ color: var(--blue); }
 
   .guide-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
   @media (max-width: 700px){ .guide-grid{ grid-template-columns: 1fr; } }
 
   .guide-card{
-    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-    padding: 22px; text-decoration: none; display: block;
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 22px; text-decoration: none; display: block; position: relative;
     transition: border-color .15s ease, transform .15s ease;
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
   }
-  .guide-card:hover{ border-color: var(--gold); transform: translateY(-2px); }
+  .guide-card:hover{ border-color: var(--ember); transform: translateY(-2px); }
   .guide-section--combat .guide-card:hover{ border-color: var(--blue); }
   .guide-card .icon{
-    width: 36px; height: 36px; border-radius: 10px; background: var(--gold-soft); color: var(--gold);
+    width: 34px; height: 34px; border-radius: 2px; background: var(--ember-soft); color: var(--ember);
     display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
   }
   .guide-section--combat .icon{ background: var(--blue-soft); color: var(--blue); }
   .guide-card .icon svg{ width: 18px; height: 18px; }
   .guide-card .tag{
     font-family: var(--font-mono); font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em;
-    text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block;
+    text-transform: uppercase; color: var(--ember); margin-bottom: 10px; display: block;
   }
   .guide-section--combat .tag{ color: var(--blue); }
-  .guide-card h3{ font-family: var(--font-display); font-size: 17px; color: var(--ink); margin: 0 0 8px; }
+  .guide-card h3{ font-family: var(--font-display); text-transform: uppercase; font-size: 17px; letter-spacing: 0.01em; color: var(--ink); margin: 0 0 8px; }
   .guide-card p{ font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; margin: 0; }
 
   .about{
-    background: var(--surface-soft); border: 1px solid var(--border); border-radius: 14px;
+    background: var(--surface-soft); border: 1px solid var(--border); border-left: 2px solid var(--blue);
     padding: 22px 24px; margin-top: 40px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.85;
   }
   .about b{ color: var(--ink); }
@@ -203,7 +207,7 @@
 <body>
 <div class="wrap">
   <div class="site-header">
-    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 L15 12.5 L12 21.5 L9 12.5 Z"/><circle cx="12" cy="7.5" r="1.3" fill="currentColor" stroke="none"/></svg>Phantom Blade Zero Guide</a>
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 L20 20 M4 20 L20 4" opacity="0.35"/><path d="M12 3 L12 21"/></svg>Phantom Blade Zero Guide</a>
     <div class="header-right">
       <nav class="site-nav">
         <div class="nav-group">
@@ -231,31 +235,30 @@
 
   <div class="hero-wrap">
     <div class="hero-decor" aria-hidden="true">
-      <svg viewBox="0 0 260 280" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="mistGold" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#C9A257" stop-opacity="0.20"/>
-            <stop offset="100%" stop-color="#C9A257" stop-opacity="0"/>
+          <linearGradient id="fogBlue" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#5A9BB5" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#5A9BB5" stop-opacity="0"/>
           </linearGradient>
-          <linearGradient id="mistRed" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#9C2B22" stop-opacity="0.20"/>
-            <stop offset="100%" stop-color="#9C2B22" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="mistBlue" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#4E93B0" stop-opacity="0.18"/>
-            <stop offset="100%" stop-color="#4E93B0" stop-opacity="0"/>
+          <linearGradient id="fogEmber" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#D98A4E" stop-opacity="0.20"/>
+            <stop offset="100%" stop-color="#D98A4E" stop-opacity="0"/>
           </linearGradient>
         </defs>
-        <rect x="6" y="0" width="36" height="280" fill="url(#mistGold)"/>
-        <rect x="62" y="0" width="44" height="280" fill="url(#mistRed)"/>
-        <rect x="130" y="0" width="38" height="280" fill="url(#mistBlue)"/>
-        <rect x="198" y="0" width="42" height="280" fill="url(#mistGold)"/>
-        <g transform="translate(158,34) rotate(14)" opacity="0.3" stroke="#C9A257" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M0 0 L8 138 L0 166 L-8 138 Z"/>
-          <line x1="0" y1="166" x2="0" y2="204"/>
-          <path d="M-12 166 L12 166 L12 173 L-12 173 Z"/>
-          <circle cx="0" cy="10" r="2" fill="#C9A257" stroke="none"/>
+        <rect x="0" y="0" width="280" height="260" fill="url(#fogBlue)"/>
+        <path d="M20 210 Q140 170 260 210" stroke="#5A9BB5" stroke-width="1" fill="none" opacity="0.25"/>
+        <path d="M10 175 Q140 130 270 175" stroke="#5A9BB5" stroke-width="1" fill="none" opacity="0.18"/>
+        <g opacity="0.85">
+          <path d="M60 40 L215 165" stroke="#5A9BB5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M60 40 L46 34 M60 40 L52 54" stroke="#5A9BB5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
         </g>
+        <g opacity="0.85">
+          <path d="M220 40 L65 165" stroke="#D98A4E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M220 40 L234 34 M220 40 L228 54" stroke="#D98A4E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </g>
+        <circle cx="140" cy="103" r="4" fill="#E9EEEF" opacity="0.9"/>
+        <rect x="0" y="220" width="280" height="40" fill="url(#fogEmber)"/>
       </svg>
     </div>
     <header class="hero">
