@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>影之刃零攻略站 - 配置需求、杀气槽机制、BOSS攻略</title>
-<meta name="description" content="《影之刃零》非官方攻略站——PC配置需求、杀气槽战斗系统详解、难度模式对比、BOSS攻略、全流程攻略持续更新。">
+<title>Phantom Blade Zero Guide - PC Requirements, Sha-Chi System, Boss Guides</title>
+<meta name="description" content="Unofficial Phantom Blade Zero guide - PC requirements, the Sha-Chi combat system explained, difficulty comparison, boss guides, and full walkthrough content, updated continuously.">
 <link rel="canonical" href="https://phantombladezeroguides.com/">
-<link rel="alternate" hreflang="zh" href="https://phantombladezeroguides.com/">
-<link rel="alternate" hreflang="en" href="https://phantombladezeroguides.com/en/">
-<link rel="alternate" hreflang="x-default" href="https://phantombladezeroguides.com/en/">
+<link rel="alternate" hreflang="zh" href="https://phantombladezeroguides.com/zh/">
+<link rel="alternate" hreflang="en" href="https://phantombladezeroguides.com/">
+<link rel="alternate" hreflang="x-default" href="https://phantombladezeroguides.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="影之刃零攻略站">
-<meta property="og:description" content="《影之刃零》非官方攻略站——配置需求、战斗系统、BOSS攻略持续更新。">
+<meta property="og:title" content="Phantom Blade Zero Guide">
+<meta property="og:description" content="Unofficial Phantom Blade Zero guide - PC requirements, combat system, boss guides, and more.">
 <meta property="og:url" content="https://phantombladezeroguides.com/">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "影之刃零攻略站",
+  "name": "Phantom Blade Zero Guide",
   "url": "https://phantombladezeroguides.com/",
-  "description": "《影之刃零》非官方攻略站，涵盖配置需求、战斗系统、BOSS攻略、全流程攻略等内容。"
+  "description": "Unofficial Phantom Blade Zero guide covering PC requirements, the combat system, boss guides, full walkthrough content and more."
 }
 </script>
 <!-- TODO: Google Analytics — add gtag.js snippet here once a GA4 property exists for this site -->
 <!-- TODO: Google AdSense — add once the site has enough traffic/history to apply -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg: #100D0A;
@@ -44,8 +44,8 @@
     --gold-soft: rgba(201,162,87,0.10);
     --blue: #4E93B0;
     --blue-soft: rgba(78,147,176,0.14);
-    --font-display: 'Noto Serif SC', 'Georgia', serif;
-    --font-body: 'Noto Sans SC', system-ui, sans-serif;
+    --font-display: 'Cinzel', 'Georgia', serif;
+    --font-body: 'Inter', system-ui, sans-serif;
     --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
   }
 
@@ -70,16 +70,17 @@
     display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
   }
   .site-header .brand{
-    font-family: var(--font-display); font-weight: 700; font-size: 16px;
+    font-family: var(--font-display); font-weight: 700; font-size: 15px;
     color: var(--ink); text-decoration: none; letter-spacing: 0.01em; white-space: nowrap; padding: 10px 0;
     display: flex; align-items: center; gap: 8px;
   }
   .brand-mark{ color: var(--gold); flex-shrink: 0; }
+  .header-right{ display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
   .site-nav{ display: flex; gap: 2px; flex-wrap: wrap; }
   .nav-group{ position: relative; }
   .nav-trigger{
     font-family: var(--font-body); font-size: 13.5px; font-weight: 600;
-    letter-spacing: 0.02em; color: var(--ink-soft); background: none; border: none;
+    letter-spacing: 0.01em; color: var(--ink-soft); background: none; border: none;
     cursor: pointer; padding: 10px 10px; border-radius: 8px;
   }
   .nav-trigger:hover, .nav-group:focus-within .nav-trigger{ color: var(--gold); background: rgba(201,162,87,0.10); }
@@ -94,7 +95,6 @@
     color: var(--ink-soft); text-decoration: none; padding: 8px 10px; border-radius: 6px;
   }
   .nav-menu a:hover{ color: var(--gold); background: rgba(201,162,87,0.10); }
-  .header-right{ display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
   .lang-switch{ display: flex; gap: 2px; border-left: 1px solid var(--border); padding-left: 8px; margin-left: 4px; }
   .lang-switch a{
     font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.03em;
@@ -121,21 +121,21 @@
   .eyebrow{
     font-family: var(--font-mono);
     font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
-    color: var(--gold); margin: 0 0 12px;
+    color: var(--gold); margin: 0 0 12px; text-transform: uppercase;
   }
   h1{
     font-family: var(--font-display);
     font-weight: 900;
-    font-size: clamp(34px, 5vw, 50px);
+    font-size: clamp(32px, 4.6vw, 46px);
     color: var(--ink);
     margin: 0 0 14px;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
     line-height: 1.2;
   }
   header.hero p{
     color: var(--ink-soft);
     font-size: 15.5px;
-    line-height: 1.9;
+    line-height: 1.85;
     margin: 0;
     max-width: 620px;
   }
@@ -149,7 +149,7 @@
   .fact-pill b{ color: var(--gold); font-weight: 600; }
 
   .section-title{
-    font-family: var(--font-display); font-size: 22px; font-weight: 700;
+    font-family: var(--font-display); font-size: 21px; font-weight: 700;
     color: var(--ink); margin: 46px 0 18px; letter-spacing: 0.01em;
   }
 
@@ -159,7 +159,7 @@
     margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
   }
   .guide-section-head h3{
-    font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--ink); margin: 0;
+    font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--ink); margin: 0;
   }
   .guide-section-head p{ font-family: var(--font-body); font-size: 12.5px; color: var(--ink-faint); margin: 0; }
   .guide-section--combat .guide-section-head h3{ color: var(--blue); }
@@ -185,12 +185,12 @@
     text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block;
   }
   .guide-section--combat .tag{ color: var(--blue); }
-  .guide-card h3{ font-family: var(--font-display); font-size: 18px; color: var(--ink); margin: 0 0 8px; }
+  .guide-card h3{ font-family: var(--font-display); font-size: 17px; color: var(--ink); margin: 0 0 8px; }
   .guide-card p{ font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; margin: 0; }
 
   .about{
     background: var(--surface-soft); border: 1px solid var(--border); border-radius: 14px;
-    padding: 22px 24px; margin-top: 40px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.9;
+    padding: 22px 24px; margin-top: 40px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.85;
   }
   .about b{ color: var(--ink); }
 
@@ -203,29 +203,29 @@
 <body>
 <div class="wrap">
   <div class="site-header">
-    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 L15 12.5 L12 21.5 L9 12.5 Z"/><circle cx="12" cy="7.5" r="1.3" fill="currentColor" stroke="none"/></svg>影之刃零攻略站</a>
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 L15 12.5 L12 21.5 L9 12.5 Z"/><circle cx="12" cy="7.5" r="1.3" fill="currentColor" stroke="none"/></svg>Phantom Blade Zero Guide</a>
     <div class="header-right">
-    <nav class="site-nav">
-      <div class="nav-group">
-        <button type="button" class="nav-trigger">新手向导</button>
-        <div class="nav-menu">
-          <a href="/pc-requirements/">PC配置需求详解</a>
-          <a href="/difficulty/">难度模式对比</a>
-          <a href="/wukong-comparison/">对比黑神话悟空</a>
+      <nav class="site-nav">
+        <div class="nav-group">
+          <button type="button" class="nav-trigger">Getting Started</button>
+          <div class="nav-menu">
+            <a href="/pc-requirements/">PC Requirements</a>
+            <a href="/difficulty-guide/">Difficulty Modes Compared</a>
+            <a href="/black-myth-wukong-comparison/">vs. Black Myth: Wukong</a>
+          </div>
         </div>
-      </div>
-      <div class="nav-group">
-        <button type="button" class="nav-trigger">战斗系统</button>
-        <div class="nav-menu">
-          <a href="/killing-intent/">杀气槽机制详解</a>
-          <a href="/phantom-armament/">影之武装系统解析</a>
+        <div class="nav-group">
+          <button type="button" class="nav-trigger">Combat System</button>
+          <div class="nav-menu">
+            <a href="/sha-chi-guide/">Sha-Chi System Explained</a>
+            <a href="/phantom-edges/">Phantom Edges Guide</a>
+          </div>
         </div>
+      </nav>
+      <div class="lang-switch">
+        <a href="/" class="active">EN</a>
+        <a href="/zh/">中文</a>
       </div>
-    </nav>
-    <div class="lang-switch">
-      <a href="/" class="active">中文</a>
-      <a href="/en/">EN</a>
-    </div>
     </div>
   </div>
 
@@ -259,73 +259,73 @@
       </svg>
     </div>
     <header class="hero">
-      <p class="eyebrow">非官方攻略站 · 灵游坊 S-GAME</p>
-      <h1>影之刃零</h1>
-      <p>灵游坊自主研发、虚幻5引擎打造的暗黑武侠动作游戏。你将扮演心脏遭受重创的剑客"魂"，在仅剩六十六天的生命倒计时里，游走于刀光剑影与腥风血雨之间，粉碎一桩笼罩整个武林的惊天阴谋。本站持续更新配置需求、杀气槽战斗系统、BOSS攻略等实用内容。</p>
+      <p class="eyebrow">Unofficial Guide · S-GAME</p>
+      <h1>Phantom Blade Zero</h1>
+      <p>A dark wuxia action game built by S-GAME on Unreal Engine 5. You play as Soul, a blade-for-hire with a devastating wound to the heart that leaves him only sixty-six days to live, as he cuts through blood and steel to unravel a conspiracy threatening the entire martial world. This site tracks PC requirements, the Sha-Chi combat system, boss guides, and more as they become available.</p>
       <div class="fact-row">
-        <div class="fact-pill">发售日 <b>2026年10月29日</b></div>
-        <div class="fact-pill">PC(Steam)・PS5</div>
-        <div class="fact-pill">开发/发行 <b>灵游坊 S-GAME</b></div>
-        <div class="fact-pill">引擎 <b>虚幻5</b></div>
+        <div class="fact-pill">Release <b>Oct 29, 2026</b></div>
+        <div class="fact-pill">PC (Steam) · PS5</div>
+        <div class="fact-pill">Developer/Publisher <b>S-GAME</b></div>
+        <div class="fact-pill">Engine <b>Unreal Engine 5</b></div>
       </div>
     </header>
   </div>
 
-  <p class="section-title">攻略列表</p>
+  <p class="section-title">Guides</p>
 
   <div class="guide-section">
     <div class="guide-section-head">
-      <h3>新手向导</h3>
-      <p>开始游戏前需要知道的事</p>
+      <h3>Getting Started</h3>
+      <p>What to know before you play</p>
     </div>
     <div class="guide-grid">
       <a class="guide-card" href="/pc-requirements/">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><line x1="8" y1="20" x2="16" y2="20"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span>
-        <span class="tag">配置需求</span>
-        <h3>PC配置需求详解</h3>
-        <p>最低配置GTX 1660可玩、推荐配置RTX 3060 Ti流畅2K60帧——完整硬件需求与优化建议。</p>
+        <span class="tag">System Requirements</span>
+        <h3>PC Requirements Explained</h3>
+        <p>Minimum GTX 1660, recommended RTX 3060 Ti for smooth 2K/60fps — full hardware requirements and optimization tips.</p>
       </a>
-      <a class="guide-card" href="/difficulty/">
+      <a class="guide-card" href="/difficulty-guide/">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 L4 14 M9.5 20 L9.5 10 M15 20 L15 6 M20.5 20 L20.5 3"/></svg></span>
-        <span class="tag">难度选择</span>
-        <h3>难度模式对比</h3>
-        <p>逆天者的动态AI反制、六十六天的死亡倒计时——四大难度全解析与选择建议。</p>
+        <span class="tag">Difficulty</span>
+        <h3>Difficulty Modes Compared</h3>
+        <p>Hellwalker's adaptive AI, the 66 Days permadeath countdown — all four difficulty tiers explained.</p>
       </a>
-      <a class="guide-card" href="/wukong-comparison/">
+      <a class="guide-card" href="/black-myth-wukong-comparison/">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/></svg></span>
-        <span class="tag">选购对比</span>
-        <h3>对比黑神话悟空</h3>
-        <p>原创武侠IP vs 西游文学改编、飘逸连招vs厚重打击——两款中国3A怎么选。</p>
+        <span class="tag">Comparison</span>
+        <h3>vs. Black Myth: Wukong</h3>
+        <p>Original wuxia IP vs. a Journey to the West adaptation, fluid combos vs. heavier soulslike feedback — how the two AAA titles from China compare.</p>
       </a>
     </div>
   </div>
 
   <div class="guide-section guide-section--combat">
     <div class="guide-section-head">
-      <h3>战斗系统</h3>
-      <p>核心机制拆解</p>
+      <h3>Combat System</h3>
+      <p>Core mechanics explained</p>
     </div>
     <div class="guide-grid">
-      <a class="guide-card" href="/killing-intent/">
+      <a class="guide-card" href="/sha-chi-guide/">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 C7 7 5 11 5 14.5 A7 7 0 0 0 19 14.5 C19 11 17 7 12 2 Z"/></svg></span>
-        <span class="tag">核心机制</span>
-        <h3>杀气槽机制详解</h3>
-        <p>红光只能闪避、蓝光可格挡可闪避——攻防转换三循环与"鬼步"触发条件全解析。</p>
+        <span class="tag">Core Mechanic</span>
+        <h3>Sha-Chi System Explained</h3>
+        <p>Killer Moves can only be dodged, Brutal Moves can be blocked or dodged — the offense-defense loop and how to trigger a Ghoststep.</p>
       </a>
-      <a class="guide-card" href="/phantom-armament/">
+      <a class="guide-card" href="/phantom-edges/">
         <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L19 7 L19 17 L12 21 L5 17 L5 7 Z"/><path d="M12 3 L12 21 M5 7 L19 17 M19 7 L5 17"/></svg></span>
-        <span class="tag">副武器系统</span>
-        <h3>影之武装系统解析</h3>
-        <p>2主武器+2影之武装的装备机制，力量/远程/武学/奇术四大分类与实战搭配思路。</p>
+        <span class="tag">Secondary Weapons</span>
+        <h3>Phantom Edges Guide</h3>
+        <p>The 2 blades + 2 Phantom Edges loadout, the four weapon categories, and how to use them in combat.</p>
       </a>
     </div>
   </div>
 
   <div class="about">
-    <b>关于本站：</b>《影之刃零》（英文名 Phantom Blade Zero）是由北京灵游坊工作室（S-GAME）自主研发及发行、虚幻5引擎打造的第三人称暗黑武侠动作冒险游戏，将于2026年10月29日登陆PC（Steam）与PlayStation 5平台。游戏故事发生在融合中式武侠、蒸汽朋克与神秘学元素的架空世界"影境"，武指团队"甄家班"深度参与动作设计，甄子丹自2023年起担任监制并亲自出演角色。本站为非官方粉丝攻略站，与灵游坊/S-GAME无任何关联，内容将持续更新与校对。
+    <b>About this site:</b> Phantom Blade Zero (影之刃零) is a third-person dark wuxia action-adventure built on Unreal Engine 5 by Beijing-based S-GAME, launching October 29, 2026 on PC (Steam) and PlayStation 5. The story is set in the Phantom World, a fictional setting blending Chinese wuxia, steampunk, and occult elements. Hong Kong action choreographer Kenji Tanigaki's team led the combat choreography, and Donnie Yen has served as producer since 2023 while also appearing as a cast member. This is an unofficial fan-made guide site with no affiliation to S-GAME; content is updated and corrected on an ongoing basis.
   </div>
 
-  <footer>本站为非官方粉丝制作攻略站，游戏名称、角色、素材版权归属灵游坊工作室（S-GAME）及相关权利方所有。</footer>
+  <footer>This is an unofficial fan-made guide site. All game names, characters, and assets referenced belong to S-GAME and their respective rights holders.</footer>
 </div>
 </body>
 </html>
