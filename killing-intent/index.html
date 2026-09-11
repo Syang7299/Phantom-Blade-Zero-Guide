@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影之刃零杀气槽机制详解 — 红光蓝光应对、鬼步、绝招全解析</title>
+<meta name="description" content="《影之刃零》核心战斗系统杀气槽详解——红光只能闪避、蓝光可格挡可闪避，完美格挡触发鬼步反击，精纯杀气与绝招机制全解析。">
+<link rel="canonical" href="https://YOURDOMAIN.com/killing-intent/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="影之刃零杀气槽机制详解">
+<meta property="og:description" content="红光只能闪避、蓝光可格挡可闪避，鬼步与绝招机制全解析。">
+<meta property="og:url" content="https://YOURDOMAIN.com/killing-intent/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "影之刃零杀气槽机制详解",
+  "description": "《影之刃零》核心战斗系统杀气槽详解——红光只能闪避、蓝光可格挡可闪避，完美格挡触发鬼步反击，精纯杀气与绝招机制全解析。",
+  "url": "https://YOURDOMAIN.com/killing-intent/",
+  "mainEntityOfPage": "https://YOURDOMAIN.com/killing-intent/",
+  "dateModified": "2026-09-11"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "影之刃零红光攻击和蓝光攻击有什么区别？",
+      "acceptedAnswer": { "@type": "Answer", "text": "红光攻击不可格挡，只能用R1闪避应对；蓝光攻击既可以用L1格挡，也可以用R1闪避应对。两者完美应对都能触发角色化为黑烟绕至敌后的“鬼步”效果。" }
+    },
+    {
+      "@type": "Question",
+      "name": "杀气槽打空会怎样？",
+      "acceptedAnswer": { "@type": "Answer", "text": "杀气槽被打空会让角色陷入破防大硬直，此时会暴露在敌人的后续攻击之下，是战斗中最危险的状态。" }
+    },
+    {
+      "@type": "Question",
+      "name": "精纯杀气和普通杀气是同一个槽吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不是。精纯杀气是另一条独立资源，主要通过高难度操作（如完美闪避触发的“鬼步”）快速增长，攒满后可以释放高威力的“绝招”，普通杀气槽则用于格挡、重击和日常的进攻防御转换。" }
+    }
+  ]
+}
+</script>
+<!-- TODO: Google Analytics — add gtag.js snippet here once a GA4 property exists for this site -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #100D0A; --surface:#1D1712; --surface-soft:#171310; --border:#382E22;
+    --ink:#EDE4D3; --ink-soft:#B8AD97; --ink-faint:#7A6F5C;
+    --primary:#9C2B22; --primary-soft:rgba(156,43,34,0.15);
+    --gold:#C9A257; --gold-soft: rgba(201,162,87,0.10);
+    --blue:#4E93B0; --blue-soft: rgba(78,147,176,0.14);
+    --font-display:'Noto Serif SC','Georgia',serif;
+    --font-body:'Noto Sans SC',system-ui,sans-serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+    --bg-alt: radial-gradient(1000px 600px at 90% -8%, rgba(156,43,34,0.18), transparent 62%), radial-gradient(800px 550px at 2% 100%, rgba(201,162,87,0.10), transparent 58%), radial-gradient(700px 450px at 8% 4%, rgba(78,147,176,0.12), transparent 60%);
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    background-image: var(--bg-alt);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: var(--font-body);
+    padding: 40px 20px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{ max-width: 760px; margin: 0 auto; }
+  .eyebrow{
+    font-family: var(--font-mono);
+    font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+    color: var(--gold); margin: 0 0 12px;
+  }
+  h1{
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(26px, 3.8vw, 34px); line-height: 1.4;
+    margin: 0 0 14px; letter-spacing: 0.01em;
+  }
+  .lede{ font-size: 15.5px; color: var(--ink-soft); line-height: 1.9; margin: 0 0 30px; }
+  h2{
+    font-family: var(--font-display); font-weight: 700; font-size: 19px;
+    margin: 38px 0 14px; color: var(--ink);
+  }
+  h3{
+    font-family: var(--font-display); font-weight: 700; font-size: 15.5px;
+    margin: 0 0 6px; color: var(--gold);
+  }
+  p{ font-size: 14.5px; line-height: 1.9; color: var(--ink); margin: 0 0 16px; }
+  ul, ol{ padding-left: 22px; margin: 0 0 16px; }
+  li{ font-size: 14.5px; line-height: 1.9; margin-bottom: 8px; }
+  li b{ color: var(--gold); }
+
+  table{ width:100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 13.5px; }
+  th,td{ text-align:left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th{ font-family: var(--font-display); font-size: 12.5px; color: var(--gold); font-weight: 700; }
+  td{ color: var(--ink-soft); }
+  td b{ color: var(--ink); }
+
+  .notice{
+    background: var(--primary-soft); border: 1.5px solid var(--primary); border-radius: 12px;
+    padding: 14px 18px; font-size: 13px; line-height: 1.8; margin: 0 0 24px; color: var(--ink-soft);
+  }
+  .callout{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 20px; margin: 24px 0;
+  }
+  .callout p{ margin: 0; }
+
+  .diagram{
+    background: var(--surface-soft); border: 1px solid var(--border); border-radius: 14px;
+    padding: 20px 18px 14px; margin: 10px 0 26px;
+  }
+  .diagram svg{ display:block; width:100%; height:auto; }
+  .diagram-cap{
+    font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint);
+    text-align: center; margin-top: 10px; letter-spacing: 0.01em;
+  }
+  .dtext{ font-family: var(--font-body); }
+
+  .move-card{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px 20px; margin-bottom: 14px;
+  }
+  .move-card h3{ font-size: 15.5px; margin: 0 0 8px; }
+  .move-card p{ margin: 0 0 8px; font-size: 13.5px; color: var(--ink-soft); }
+  .move-card p:last-child{ margin-bottom: 0; }
+  .move-card.red{ border-color: var(--primary); }
+  .move-card.red h3{ color: var(--primary); }
+  .move-card.blue{ border-color: var(--blue); }
+  .move-card.blue h3{ color: var(--blue); }
+
+  .site-header{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 6px 16px; margin: 0 0 34px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  .site-header .brand{
+    font-family: var(--font-display); font-weight: 700; font-size: 15px;
+    color: var(--ink); text-decoration: none; letter-spacing: 0.01em; white-space: nowrap; padding: 10px 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .brand-mark{ color: var(--gold); flex-shrink: 0; }
+  .site-nav{ display: flex; gap: 2px; flex-wrap: wrap; }
+  .nav-group{ position: relative; }
+  .nav-trigger{
+    font-family: var(--font-body); font-size: 13.5px; font-weight: 600;
+    letter-spacing: 0.02em; color: var(--ink-soft); background: none; border: none;
+    cursor: pointer; padding: 10px 10px; border-radius: 8px;
+  }
+  .nav-trigger:hover, .nav-group:focus-within .nav-trigger{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  .nav-menu{
+    display: none; position: absolute; top: 100%; right: 0; z-index: 20;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 8px; min-width: 220px; box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+  }
+  .nav-group:hover .nav-menu, .nav-group:focus-within .nav-menu{ display: block; }
+  .nav-menu a{
+    display: block; font-family: var(--font-body); font-size: 13.5px; font-weight: 500;
+    color: var(--ink-soft); text-decoration: none; padding: 8px 10px; border-radius: 6px;
+  }
+  .nav-menu a:hover{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  @media (max-width: 720px){
+    .site-nav{ width: 100%; flex-direction: column; gap: 0; }
+    .nav-group{ width: 100%; }
+    .nav-trigger{ width: 100%; text-align: left; }
+    .nav-menu{ display: block; position: static; box-shadow: none; border: none; background: none; padding: 0 0 6px 14px; min-width: 0; }
+  }
+
+  footer{ margin-top: 50px; font-size: 12px; color: var(--ink-faint); line-height: 1.8; }
+  footer a{ color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="site-header">
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 L15 12.5 L12 21.5 L9 12.5 Z"/><circle cx="12" cy="7.5" r="1.3" fill="currentColor" stroke="none"/></svg>影之刃零攻略站</a>
+    <nav class="site-nav">
+      <div class="nav-group">
+        <button type="button" class="nav-trigger">新手向导</button>
+        <div class="nav-menu">
+          <a href="/pc-requirements/">PC配置需求详解</a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-trigger">战斗系统</button>
+        <div class="nav-menu">
+          <a href="/killing-intent/">杀气槽机制详解</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <p class="eyebrow">影之刃零 · 战斗系统</p>
+  <h1>杀气槽机制详解</h1>
+  <p class="lede">《影之刃零》的战斗核心不是单纯的"打得多"，而是"杀气"这一资源的攻防转换。敌我双方都有血条和杀气槽，读懂红光、蓝光两种攻击提示的区别，是从"看着打"进阶到"打得赢"的第一步。</p>
+
+  <div class="notice">
+    本文机制说明综合自多家媒体的试玩报告与实机演示（游民星空、腾讯新闻、机核GCORES等，试玩时间跨度从2024年6月到2026年8月），核心概念（血条+杀气槽、红光/蓝光区分、鬼步触发）在多篇报道中表述一致。由于游戏尚未正式发售（2026年10月29日），具体数值（杀气恢复速度、伤害倍率等）暂未有可靠信源公布，本文不做数值层面的编造，发售后我们会补充实测数据。
+  </div>
+
+  <h2>杀气槽是什么</h2>
+  <p>敌我双方都拥有两条资源槽：<b>血条</b>（生命值）和<b>杀气槽</b>（融合了精力、技能、威力增强、特殊招式能量等作用的综合资源）。轻攻击和闪避可以无限释放不受限制，命中敌人则会积攒杀气；攒下的杀气可以用于格挡、重击、杀意爆发和释放绝技。杀气槽一旦被打空，角色会陷入<b>破防大硬直</b>，这是战斗中最危险的状态——之后敌人的攻击基本无法招架。</p>
+
+  <h2>红光 vs 蓝光：两种攻击提示</h2>
+  <p>敌人出招前会用红光或蓝光提示攻击类型，这是本作最核心的战斗读招系统：</p>
+  <div class="move-card red">
+    <h3>红光攻击</h3>
+    <p><b>只能用R1闪避应对，不可用L1格挡。</b> 完美闪避成功后，主角会化为一道黑烟，瞬间绕行至敌人身后，自动触发"鬼步"。</p>
+  </div>
+  <div class="move-card blue">
+    <h3>蓝光攻击</h3>
+    <p><b>既可以用R1闪避，也可以用L1格挡应对。</b> 如果按出<b>完美格挡</b>，收益会明显更高：不仅会大幅削减敌人的杀气值，还会触发"鬼步"完成反击，同时自己的杀气槽会直接被打满。</p>
+  </div>
+
+  <div class="diagram">
+    <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="20" width="130" height="60" rx="8" fill="#1D1712" stroke="#9C2B22" stroke-width="1.5"/>
+      <text x="75" y="45" text-anchor="middle" class="dtext" font-size="12.5" fill="#EDE6DA" font-weight="700" fill-opacity="1">红光攻击</text>
+      <text x="75" y="64" text-anchor="middle" class="dtext" font-size="9.5" fill="#B8AD97">不可格挡</text>
+
+      <path d="M145 50 L173 50" stroke="#7A6F5C" stroke-width="2"/>
+      <path d="M173 50 L164 45 L164 55 Z" fill="#7A6F5C"/>
+
+      <rect x="178" y="20" width="130" height="60" rx="8" fill="#1D1712" stroke="#332C26" stroke-width="1.5"/>
+      <text x="243" y="45" text-anchor="middle" class="dtext" font-size="12.5" fill="#EDE6DA" font-weight="700">R1完美闪避</text>
+      <text x="243" y="64" text-anchor="middle" class="dtext" font-size="9.5" fill="#B8AD97">唯一应对方式</text>
+
+      <rect x="10" y="140" width="130" height="60" rx="8" fill="#1D1712" stroke="#4E93B0" stroke-width="1.5"/>
+      <text x="75" y="165" text-anchor="middle" class="dtext" font-size="12.5" fill="#EDE6DA" font-weight="700">蓝光攻击</text>
+      <text x="75" y="184" text-anchor="middle" class="dtext" font-size="9.5" fill="#B8AD97">可格挡可闪避</text>
+
+      <path d="M145 170 L173 170" stroke="#7A6F5C" stroke-width="2"/>
+      <path d="M173 170 L164 165 L164 175 Z" fill="#7A6F5C"/>
+
+      <rect x="178" y="140" width="130" height="60" rx="8" fill="#1D1712" stroke="#332C26" stroke-width="1.5"/>
+      <text x="243" y="165" text-anchor="middle" class="dtext" font-size="12.5" fill="#EDE6DA" font-weight="700">L1完美格挡</text>
+      <text x="243" y="184" text-anchor="middle" class="dtext" font-size="9.5" fill="#B8AD97">收益最高的选项</text>
+
+      <path d="M313 50 L340 110" stroke="#7A6F5C" stroke-width="2"/>
+      <path d="M313 170 L340 110" stroke="#7A6F5C" stroke-width="2"/>
+      <path d="M340 110 L332 100 L348 100 Z" fill="#7A6F5C" transform="rotate(90 340 110)"/>
+
+      <rect x="350" y="80" width="150" height="60" rx="8" fill="#1D1712" stroke="#C9A257" stroke-width="1.5"/>
+      <text x="425" y="105" text-anchor="middle" class="dtext" font-size="12.5" fill="#C9A257" font-weight="700">触发"鬼步"</text>
+      <text x="425" y="124" text-anchor="middle" class="dtext" font-size="9.5" fill="#B8AD97">化黑烟绕至敌后</text>
+
+      <path d="M505 110 L528 110" stroke="#7A6F5C" stroke-width="2"/>
+      <path d="M528 110 L519 105 L519 115 Z" fill="#7A6F5C"/>
+
+      <rect x="533" y="80" width="155" height="60" rx="8" fill="#1D1712" stroke="#C9A257" stroke-width="1.5"/>
+      <text x="610" y="102" text-anchor="middle" class="dtext" font-size="11.5" fill="#EDE6DA" font-weight="700">蓝光完美格挡额外收益</text>
+      <text x="610" y="120" text-anchor="middle" class="dtext" font-size="9.5" fill="#C9A257" font-weight="700">敌方杀气大削＋己方杀气全满</text>
+    </svg>
+    <p class="diagram-cap">红光只能躲、蓝光可挡可躲——完美应对都会打出"鬼步"</p>
+  </div>
+
+  <h2>最保险的选择：R1闪避</h2>
+  <p>如果一时分不清红光蓝光，或者面对新BOSS还没摸清招式，<b>R1闪避（滑步）</b>是最稳妥的默认选项——它不消耗任何资源，几乎能处理游戏中敌人的所有攻击类型（红光、蓝光皆可）。等熟悉了敌人的招式规律，再逐步尝试对蓝光攻击用L1格挡去博取更高收益，是比较稳妥的学习曲线。</p>
+
+  <h2>精纯杀气与绝招</h2>
+  <p>除了主杀气槽，游戏还有一条独立的<b>精纯杀气</b>资源，功能上类似"必杀技能量条"。玩家使出高难度动作（比如精准闪避触发的"鬼步"）时，精纯杀气会大幅增长；每攒满一格，就可以放出一次威力极高的<b>绝招</b>。也就是说，越是敢打险招、越擅长精确的格挡与闪避，绝招储备积累得越快——这是本作鼓励"以攻代守"而不是一味被动防守的设计核心。</p>
+
+  <h2>攻防转换：贯穿战斗的核心循环</h2>
+  <p>官方将整套系统描述为围绕"杀气"资源建立的<b>攻防转换三循环</b>——进攻和防御两种行为共享同一份杀气资源，玩家的战斗风格由自己对杀气的理解和分配决定：</p>
+  <ul>
+    <li><b>稳健流：</b> 不断进行不消耗杀气的精准防御（R1闪避为主），靠零资源消耗慢慢拖垮敌人。</li>
+    <li><b>爆发流：</b> 凶猛进攻，优先打空敌人的杀气槽让其破防，再用一套爆发收割战斗。</li>
+  </ul>
+  <p>两种流派没有绝对的优劣之分，实际战斗中往往需要根据具体敌人的招式节奏灵活切换——这也是为什么本作的BOSS机制会成为独立的重要攻略类目，不同BOSS对"稳健"还是"爆发"的容错率并不一样。</p>
+
+  <div class="callout">
+    <p><b>实用建议：</b> 新手阶段先把R1闪避练熟练稳，作为面对任何敌人的默认反应；确认招式是蓝光提示后，再尝试用L1完美格挡去博取"鬼步"和杀气全满的高额回报。不要一上来就死磕格挡——红光攻击格挡是无效的，硬拼格挡红光只会吃到硬直，先分清颜色，再决定招式。</p>
+  </div>
+
+  <h2>常见问题</h2>
+  <p><b>红光攻击和蓝光攻击有什么区别？</b><br>红光只能用R1闪避应对，不可格挡；蓝光既可以L1格挡也可以R1闪避，完美格挡收益更高。两者完美应对都能触发"鬼步"。</p>
+  <p><b>杀气槽打空会怎样？</b><br>会陷入破防大硬直，暴露在敌人的后续攻击之下，是战斗中最危险的状态。</p>
+  <p><b>精纯杀气和普通杀气是同一个槽吗？</b><br>不是，精纯杀气是独立资源，主要靠高难度操作（如完美闪避触发的"鬼步"）快速积累，攒满后可释放"绝招"。</p>
+
+  <footer>
+    本站为非官方粉丝制作攻略站，与灵游坊工作室（S-GAME）无任何关联。本文基于游戏发售前的试玩报告与实机演示整理，具体数值以正式版为准，我们会在发售后更新实测内容。<a href="/">返回攻略站首页 →</a>
+  </footer>
+</div>
+</body>
+</html>

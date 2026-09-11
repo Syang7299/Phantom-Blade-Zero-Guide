@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影之刃零攻略站 - 配置需求、杀气槽机制、BOSS攻略</title>
+<meta name="description" content="《影之刃零》非官方攻略站——PC配置需求、杀气槽战斗系统详解、难度模式对比、BOSS攻略、全流程攻略持续更新。">
+<link rel="canonical" href="https://YOURDOMAIN.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="影之刃零攻略站">
+<meta property="og:description" content="《影之刃零》非官方攻略站——配置需求、战斗系统、BOSS攻略持续更新。">
+<meta property="og:url" content="https://YOURDOMAIN.com/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "影之刃零攻略站",
+  "url": "https://YOURDOMAIN.com/",
+  "description": "《影之刃零》非官方攻略站，涵盖配置需求、战斗系统、BOSS攻略、全流程攻略等内容。"
+}
+</script>
+<!-- TODO: Google Analytics — add gtag.js snippet here once a GA4 property exists for this site -->
+<!-- TODO: Google AdSense — add once the site has enough traffic/history to apply -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #100D0A;
+    --bg-alt: radial-gradient(1000px 600px at 90% -8%, rgba(156,43,34,0.18), transparent 62%), radial-gradient(800px 550px at 2% 100%, rgba(201,162,87,0.10), transparent 58%), radial-gradient(700px 450px at 8% 4%, rgba(78,147,176,0.12), transparent 60%);
+    --surface: #1D1712;
+    --surface-soft: #171310;
+    --border: #382E22;
+    --ink: #EDE4D3;
+    --ink-soft: #B8AD97;
+    --ink-faint: #7A6F5C;
+    --primary: #9C2B22;
+    --primary-soft: rgba(156,43,34,0.15);
+    --gold: #C9A257;
+    --gold-soft: rgba(201,162,87,0.10);
+    --blue: #4E93B0;
+    --blue-soft: rgba(78,147,176,0.14);
+    --font-display: 'Noto Serif SC', 'Georgia', serif;
+    --font-body: 'Noto Sans SC', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    background-image: var(--bg-alt);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    padding: 44px 20px 70px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{ max-width: 1060px; margin: 0 auto; }
+
+  .site-header{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 6px 16px; margin: 0 0 34px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  .site-header .brand{
+    font-family: var(--font-display); font-weight: 700; font-size: 16px;
+    color: var(--ink); text-decoration: none; letter-spacing: 0.01em; white-space: nowrap; padding: 10px 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .brand-mark{ color: var(--gold); flex-shrink: 0; }
+  .site-nav{ display: flex; gap: 2px; flex-wrap: wrap; }
+  .nav-group{ position: relative; }
+  .nav-trigger{
+    font-family: var(--font-body); font-size: 13.5px; font-weight: 600;
+    letter-spacing: 0.02em; color: var(--ink-soft); background: none; border: none;
+    cursor: pointer; padding: 10px 10px; border-radius: 8px;
+  }
+  .nav-trigger:hover, .nav-group:focus-within .nav-trigger{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  .nav-menu{
+    display: none; position: absolute; top: 100%; right: 0; z-index: 20;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 8px; min-width: 220px; box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+  }
+  .nav-group:hover .nav-menu, .nav-group:focus-within .nav-menu{ display: block; }
+  .nav-menu a{
+    display: block; font-family: var(--font-body); font-size: 13.5px; font-weight: 500;
+    color: var(--ink-soft); text-decoration: none; padding: 8px 10px; border-radius: 6px;
+  }
+  .nav-menu a:hover{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  @media (max-width: 720px){
+    .site-nav{ width: 100%; flex-direction: column; gap: 0; }
+    .nav-group{ width: 100%; }
+    .nav-trigger{ width: 100%; text-align: left; }
+    .nav-menu{ display: block; position: static; box-shadow: none; border: none; background: none; padding: 0 0 6px 14px; min-width: 0; }
+  }
+
+  .hero-wrap{ position: relative; margin-bottom: 34px; }
+  .hero-decor{
+    position: absolute; top: -20px; right: 0; width: 230px; height: 250px;
+    pointer-events: none; z-index: 0;
+  }
+  .hero-decor svg{ width: 100%; height: 100%; display: block; }
+  @media (max-width: 1040px){ .hero-decor{ display: none; } }
+  header.hero{ position: relative; z-index: 1; max-width: 700px; }
+  .eyebrow{
+    font-family: var(--font-mono);
+    font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+    color: var(--gold); margin: 0 0 12px;
+  }
+  h1{
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(34px, 5vw, 50px);
+    color: var(--ink);
+    margin: 0 0 14px;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+  header.hero p{
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.9;
+    margin: 0;
+    max-width: 620px;
+  }
+
+  .fact-row{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+  .fact-pill{
+    font-family: var(--font-body); font-size: 12.5px; font-weight: 500;
+    color: var(--ink-soft); background: var(--surface); border: 1px solid var(--border);
+    border-radius: 999px; padding: 7px 14px;
+  }
+  .fact-pill b{ color: var(--gold); font-weight: 600; }
+
+  .section-title{
+    font-family: var(--font-display); font-size: 22px; font-weight: 700;
+    color: var(--ink); margin: 46px 0 18px; letter-spacing: 0.01em;
+  }
+
+  .guide-section{ margin-bottom: 40px; }
+  .guide-section-head{
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin: 0 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+  }
+  .guide-section-head h3{
+    font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--ink); margin: 0;
+  }
+  .guide-section-head p{ font-family: var(--font-body); font-size: 12.5px; color: var(--ink-faint); margin: 0; }
+  .guide-section--combat .guide-section-head h3{ color: var(--blue); }
+
+  .guide-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 700px){ .guide-grid{ grid-template-columns: 1fr; } }
+
+  .guide-card{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 22px; text-decoration: none; display: block;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .guide-card:hover{ border-color: var(--gold); transform: translateY(-2px); }
+  .guide-section--combat .guide-card:hover{ border-color: var(--blue); }
+  .guide-card .icon{
+    width: 36px; height: 36px; border-radius: 10px; background: var(--gold-soft); color: var(--gold);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+  }
+  .guide-section--combat .icon{ background: var(--blue-soft); color: var(--blue); }
+  .guide-card .icon svg{ width: 18px; height: 18px; }
+  .guide-card .tag{
+    font-family: var(--font-mono); font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block;
+  }
+  .guide-section--combat .tag{ color: var(--blue); }
+  .guide-card h3{ font-family: var(--font-display); font-size: 18px; color: var(--ink); margin: 0 0 8px; }
+  .guide-card p{ font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; margin: 0; }
+
+  .about{
+    background: var(--surface-soft); border: 1px solid var(--border); border-radius: 14px;
+    padding: 22px 24px; margin-top: 40px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.9;
+  }
+  .about b{ color: var(--ink); }
+
+  footer{
+    max-width: 1060px; margin: 30px auto 0; font-size: 12px; color: var(--ink-faint);
+    text-align: center; line-height: 1.8;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="site-header">
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 L15 12.5 L12 21.5 L9 12.5 Z"/><circle cx="12" cy="7.5" r="1.3" fill="currentColor" stroke="none"/></svg>影之刃零攻略站</a>
+    <nav class="site-nav">
+      <div class="nav-group">
+        <button type="button" class="nav-trigger">新手向导</button>
+        <div class="nav-menu">
+          <a href="/pc-requirements/">PC配置需求详解</a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-trigger">战斗系统</button>
+        <div class="nav-menu">
+          <a href="/killing-intent/">杀气槽机制详解</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="hero-wrap">
+    <div class="hero-decor" aria-hidden="true">
+      <svg viewBox="0 0 260 280" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="mistGold" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#C9A257" stop-opacity="0.20"/>
+            <stop offset="100%" stop-color="#C9A257" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="mistRed" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#9C2B22" stop-opacity="0.20"/>
+            <stop offset="100%" stop-color="#9C2B22" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="mistBlue" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4E93B0" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#4E93B0" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect x="6" y="0" width="36" height="280" fill="url(#mistGold)"/>
+        <rect x="62" y="0" width="44" height="280" fill="url(#mistRed)"/>
+        <rect x="130" y="0" width="38" height="280" fill="url(#mistBlue)"/>
+        <rect x="198" y="0" width="42" height="280" fill="url(#mistGold)"/>
+        <g transform="translate(158,34) rotate(14)" opacity="0.3" stroke="#C9A257" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M0 0 L8 138 L0 166 L-8 138 Z"/>
+          <line x1="0" y1="166" x2="0" y2="204"/>
+          <path d="M-12 166 L12 166 L12 173 L-12 173 Z"/>
+          <circle cx="0" cy="10" r="2" fill="#C9A257" stroke="none"/>
+        </g>
+      </svg>
+    </div>
+    <header class="hero">
+      <p class="eyebrow">非官方攻略站 · 灵游坊 S-GAME</p>
+      <h1>影之刃零</h1>
+      <p>灵游坊自主研发、虚幻5引擎打造的暗黑武侠动作游戏。你将扮演心脏遭受重创的剑客"魂"，在仅剩六十六天的生命倒计时里，游走于刀光剑影与腥风血雨之间，粉碎一桩笼罩整个武林的惊天阴谋。本站持续更新配置需求、杀气槽战斗系统、BOSS攻略等实用内容。</p>
+      <div class="fact-row">
+        <div class="fact-pill">发售日 <b>2026年10月29日</b></div>
+        <div class="fact-pill">PC(Steam)・PS5</div>
+        <div class="fact-pill">开发/发行 <b>灵游坊 S-GAME</b></div>
+        <div class="fact-pill">引擎 <b>虚幻5</b></div>
+      </div>
+    </header>
+  </div>
+
+  <p class="section-title">攻略列表</p>
+
+  <div class="guide-section">
+    <div class="guide-section-head">
+      <h3>新手向导</h3>
+      <p>开始游戏前需要知道的事</p>
+    </div>
+    <div class="guide-grid">
+      <a class="guide-card" href="/pc-requirements/">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5"/><line x1="8" y1="20" x2="16" y2="20"/><line x1="12" y1="16" x2="12" y2="20"/></svg></span>
+        <span class="tag">配置需求</span>
+        <h3>PC配置需求详解</h3>
+        <p>最低配置GTX 1660可玩、推荐配置RTX 3060 Ti流畅2K60帧——完整硬件需求与优化建议。</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="guide-section guide-section--combat">
+    <div class="guide-section-head">
+      <h3>战斗系统</h3>
+      <p>核心机制拆解</p>
+    </div>
+    <div class="guide-grid">
+      <a class="guide-card" href="/killing-intent/">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 C7 7 5 11 5 14.5 A7 7 0 0 0 19 14.5 C19 11 17 7 12 2 Z"/></svg></span>
+        <span class="tag">核心机制</span>
+        <h3>杀气槽机制详解</h3>
+        <p>红光只能闪避、蓝光可格挡可闪避——攻防转换三循环与"鬼步"触发条件全解析。</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="about">
+    <b>关于本站：</b>《影之刃零》（英文名 Phantom Blade Zero）是由北京灵游坊工作室（S-GAME）自主研发及发行、虚幻5引擎打造的第三人称暗黑武侠动作冒险游戏，将于2026年10月29日登陆PC（Steam）与PlayStation 5平台。游戏故事发生在融合中式武侠、蒸汽朋克与神秘学元素的架空世界"影境"，武指团队"甄家班"深度参与动作设计，甄子丹自2023年起担任监制并亲自出演角色。本站为非官方粉丝攻略站，与灵游坊/S-GAME无任何关联，内容将持续更新与校对。
+  </div>
+
+  <footer>本站为非官方粉丝制作攻略站，游戏名称、角色、素材版权归属灵游坊工作室（S-GAME）及相关权利方所有。</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影之刃零PC配置需求详解 — 最低/推荐配置全解析</title>
+<meta name="description" content="《影之刃零》PC配置需求详解——最低配置GTX 1660可玩，推荐配置RTX 3060 Ti畅玩2K60帧，完整硬件清单与优化建议。">
+<link rel="canonical" href="https://YOURDOMAIN.com/pc-requirements/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="影之刃零PC配置需求详解">
+<meta property="og:description" content="最低配置GTX 1660可玩，推荐配置RTX 3060 Ti畅玩2K60帧。">
+<meta property="og:url" content="https://YOURDOMAIN.com/pc-requirements/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "影之刃零PC配置需求详解",
+  "description": "《影之刃零》PC配置需求详解——最低配置GTX 1660可玩，推荐配置RTX 3060 Ti畅玩2K60帧，完整硬件清单与优化建议。",
+  "url": "https://YOURDOMAIN.com/pc-requirements/",
+  "mainEntityOfPage": "https://YOURDOMAIN.com/pc-requirements/",
+  "dateModified": "2026-09-11"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "影之刃零最低配置需要什么显卡？",
+      "acceptedAnswer": { "@type": "Answer", "text": "最低配置为NVIDIA GTX 1660 6GB或AMD RX 5500 XT 8GB，可实现1080p分辨率、30帧运行，但需要开启超分辨率重建技术。" }
+    },
+    {
+      "@type": "Question",
+      "name": "影之刃零推荐配置能跑多少帧？",
+      "acceptedAnswer": { "@type": "Answer", "text": "推荐配置（RTX 3060 Ti 8GB或RX 6700 XT 12GB）可实现1440p（2K）分辨率下60帧运行。" }
+    },
+    {
+      "@type": "Question",
+      "name": "影之刃零必须用固态硬盘吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "是的，最低配置和推荐配置均要求使用SSD固态硬盘，官方没有公布机械硬盘的支持方案。" }
+    }
+  ]
+}
+</script>
+<!-- TODO: Google Analytics — add gtag.js snippet here once a GA4 property exists for this site -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #100D0A; --surface:#1D1712; --surface-soft:#171310; --border:#382E22;
+    --ink:#EDE4D3; --ink-soft:#B8AD97; --ink-faint:#7A6F5C;
+    --primary:#9C2B22; --primary-soft:rgba(156,43,34,0.15);
+    --gold:#C9A257; --gold-soft: rgba(201,162,87,0.10);
+    --blue:#4E93B0; --blue-soft: rgba(78,147,176,0.14);
+    --font-display:'Noto Serif SC','Georgia',serif;
+    --font-body:'Noto Sans SC',system-ui,sans-serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,monospace;
+    --bg-alt: radial-gradient(1000px 600px at 90% -8%, rgba(156,43,34,0.18), transparent 62%), radial-gradient(800px 550px at 2% 100%, rgba(201,162,87,0.10), transparent 58%), radial-gradient(700px 450px at 8% 4%, rgba(78,147,176,0.12), transparent 60%);
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    background-image: var(--bg-alt);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: var(--font-body);
+    padding: 40px 20px 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{ max-width: 760px; margin: 0 auto; }
+  .eyebrow{
+    font-family: var(--font-mono);
+    font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+    color: var(--gold); margin: 0 0 12px;
+  }
+  h1{
+    font-family: var(--font-display); font-weight: 900;
+    font-size: clamp(26px, 3.8vw, 34px); line-height: 1.4;
+    margin: 0 0 14px; letter-spacing: 0.01em;
+  }
+  .lede{ font-size: 15.5px; color: var(--ink-soft); line-height: 1.9; margin: 0 0 30px; }
+  h2{
+    font-family: var(--font-display); font-weight: 700; font-size: 19px;
+    margin: 38px 0 14px; color: var(--ink);
+  }
+  p{ font-size: 14.5px; line-height: 1.9; color: var(--ink); margin: 0 0 16px; }
+  ul, ol{ padding-left: 22px; margin: 0 0 16px; }
+  li{ font-size: 14.5px; line-height: 1.9; margin-bottom: 8px; }
+  li b{ color: var(--gold); }
+
+  table{ width:100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 13.5px; }
+  th,td{ text-align:left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th{ font-family: var(--font-display); font-size: 12.5px; color: var(--gold); font-weight: 700; }
+  td{ color: var(--ink-soft); }
+  td b{ color: var(--ink); }
+
+  .notice{
+    background: var(--primary-soft); border: 1.5px solid var(--primary); border-radius: 12px;
+    padding: 14px 18px; font-size: 13px; line-height: 1.8; margin: 0 0 24px; color: var(--ink-soft);
+  }
+  .callout{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 20px; margin: 24px 0;
+  }
+  .callout p{ margin: 0; }
+
+  .spec-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin: 8px 0 26px; }
+  @media (max-width: 600px){ .spec-grid{ grid-template-columns: 1fr; } }
+  .spec-col{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .spec-col h3{
+    font-family: var(--font-mono); font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em;
+    color: var(--gold); margin: 0 0 4px; text-transform: uppercase;
+  }
+  .spec-col .fps{ font-family: var(--font-display); font-size: 22px; font-weight: 900; color: var(--ink); margin: 0 0 14px; }
+  .spec-col dl{ margin: 0; }
+  .spec-col dt{ font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-faint); text-transform: uppercase; margin-top: 10px; }
+  .spec-col dt:first-child{ margin-top: 0; }
+  .spec-col dd{ margin: 2px 0 0; font-size: 13.5px; color: var(--ink); }
+  .spec-col.rec{ border-color: var(--blue); }
+  .spec-col.rec h3{ color: var(--blue); }
+
+  .site-header{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 6px 16px; margin: 0 0 34px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  .site-header .brand{
+    font-family: var(--font-display); font-weight: 700; font-size: 15px;
+    color: var(--ink); text-decoration: none; letter-spacing: 0.01em; white-space: nowrap; padding: 10px 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .brand-mark{ color: var(--gold); flex-shrink: 0; }
+  .site-nav{ display: flex; gap: 2px; flex-wrap: wrap; }
+  .nav-group{ position: relative; }
+  .nav-trigger{
+    font-family: var(--font-body); font-size: 13.5px; font-weight: 600;
+    letter-spacing: 0.02em; color: var(--ink-soft); background: none; border: none;
+    cursor: pointer; padding: 10px 10px; border-radius: 8px;
+  }
+  .nav-trigger:hover, .nav-group:focus-within .nav-trigger{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  .nav-menu{
+    display: none; position: absolute; top: 100%; right: 0; z-index: 20;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 8px; min-width: 220px; box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+  }
+  .nav-group:hover .nav-menu, .nav-group:focus-within .nav-menu{ display: block; }
+  .nav-menu a{
+    display: block; font-family: var(--font-body); font-size: 13.5px; font-weight: 500;
+    color: var(--ink-soft); text-decoration: none; padding: 8px 10px; border-radius: 6px;
+  }
+  .nav-menu a:hover{ color: var(--gold); background: rgba(201,162,87,0.10); }
+  @media (max-width: 720px){
+    .site-nav{ width: 100%; flex-direction: column; gap: 0; }
+    .nav-group{ width: 100%; }
+    .nav-trigger{ width: 100%; text-align: left; }
+    .nav-menu{ display: block; position: static; box-shadow: none; border: none; background: none; padding: 0 0 6px 14px; min-width: 0; }
+  }
+
+  footer{ margin-top: 50px; font-size: 12px; color: var(--ink-faint); line-height: 1.8; }
+  footer a{ color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="site-header">
+    <a class="brand" href="/"><svg class="brand-mark" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 L15 12.5 L12 21.5 L9 12.5 Z"/><circle cx="12" cy="7.5" r="1.3" fill="currentColor" stroke="none"/></svg>影之刃零攻略站</a>
+    <nav class="site-nav">
+      <div class="nav-group">
+        <button type="button" class="nav-trigger">新手向导</button>
+        <div class="nav-menu">
+          <a href="/pc-requirements/">PC配置需求详解</a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button type="button" class="nav-trigger">战斗系统</button>
+        <div class="nav-menu">
+          <a href="/killing-intent/">杀气槽机制详解</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <p class="eyebrow">影之刃零 · 新手向导</p>
+  <h1>PC配置需求详解</h1>
+  <p class="lede">《影之刃零》基于虚幻5引擎打造，官方已在Steam商店页面公布了最低与推荐配置。最低配置门槛不算高（GTX 1660就能玩），但要注意两档配置都要求开启超分辨率重建技术，以及必须使用SSD固态硬盘。</p>
+
+  <div class="notice">
+    本文信息来自Steam商店页面及多家媒体（游民星空、3DM、网易等）的一致报道，发布时间集中在2026年8月，多方数据完全一致。配置需求在游戏正式发售（2026年10月29日）前存在被官方微调的可能，以Steam商店页面最终公布为准。
+  </div>
+
+  <h2>最低配置 vs 推荐配置</h2>
+  <div class="spec-grid">
+    <div class="spec-col">
+      <h3>最低配置</h3>
+      <div class="fps">1080p · 30帧</div>
+      <dl>
+        <dt>操作系统</dt><dd>Windows 10/11（64位）</dd>
+        <dt>处理器</dt><dd>Intel Core i5-8700K / AMD Ryzen 5 3600</dd>
+        <dt>内存</dt><dd>16GB</dd>
+        <dt>显卡</dt><dd>NVIDIA GTX 1660 6GB / AMD RX 5500 XT 8GB</dd>
+        <dt>DirectX</dt><dd>DirectX 12</dd>
+        <dt>存储</dt><dd>SSD固态硬盘（必需）</dd>
+        <dt>备注</dt><dd>需开启超分辨率重建技术</dd>
+      </dl>
+    </div>
+    <div class="spec-col rec">
+      <h3>推荐配置</h3>
+      <div class="fps">1440p(2K) · 60帧</div>
+      <dl>
+        <dt>操作系统</dt><dd>Windows 10/11（64位）</dd>
+        <dt>处理器</dt><dd>Intel Core i5-10600K / AMD Ryzen 5 5600X</dd>
+        <dt>内存</dt><dd>16GB</dd>
+        <dt>显卡</dt><dd>NVIDIA RTX 3060 Ti 8GB / AMD RX 6700 XT 12GB</dd>
+        <dt>DirectX</dt><dd>DirectX 12</dd>
+        <dt>存储</dt><dd>SSD固态硬盘（必需）</dd>
+        <dt>备注</dt><dd>支持DLSS等画质提升技术</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h2>几个容易被忽略的细节</h2>
+  <ul>
+    <li><b>最低配置也要开超分辨率重建。</b> 也就是说GTX 1660要跑到1080p/30帧，本身就依赖DLSS/FSR一类的超分技术辅助，而不是纯原生渲染——如果你的显卡不支持对应的超分技术，实际表现可能达不到官方标称的帧数。</li>
+    <li><b>两档配置内存需求相同，都是16GB。</b> 显卡和处理器是最低与推荐之间的主要差距，8GB内存的老平台大概率需要先升级内存才能稳定运行。</li>
+    <li><b>SSD是硬性要求，不是建议。</b> 官方配置表里两档都明确写了固态硬盘，机械硬盘玩家需要留意——这类虚幻5大世界游戏对读取速度的依赖通常比较高，用机械硬盘运行不仅拖慢加载，还可能出现贴图加载不及时的问题。</li>
+    <li><b>处理器要求不算激进。</b> i5-8700K和Ryzen 5 3600都是2018-2019年前后的主流级CPU，对老平台玩家来说算是比较友好的门槛，真正的压力主要在显卡这一侧。</li>
+  </ul>
+
+  <div class="callout">
+    <p><b>实用建议：</b> 如果你的显卡是GTX 1660级别，建议提前确认自己的显卡是否支持DLSS/FSR超分技术（GTX 16系不支持DLSS，需要依赖FSR或类似技术），否则实际体验可能低于官方标称的最低配置表现。预算充足的话，直接对齐推荐配置（RTX 3060 Ti级别）会是更稳妥的选择，毕竟发售后还有后续DLC和高难度模式（如"六十六天"）对性能稳定性的要求只会更高，不会更低。</p>
+  </div>
+
+  <h2>常见问题</h2>
+  <p><b>最低配置需要什么显卡？</b><br>NVIDIA GTX 1660 6GB或AMD RX 5500 XT 8GB，可实现1080p/30帧，但需开启超分辨率重建。</p>
+  <p><b>推荐配置能跑多少帧？</b><br>RTX 3060 Ti 8GB或RX 6700 XT 12GB级别可实现1440p（2K）分辨率下60帧运行。</p>
+  <p><b>必须用固态硬盘吗？</b><br>是的，最低配置和推荐配置均要求SSD，官方未公布机械硬盘的支持方案。</p>
+
+  <footer>
+    本站为非官方粉丝制作攻略站，与灵游坊工作室（S-GAME）无任何关联。配置需求数据来自Steam商店页面及多家媒体报道，实际配置以游戏发售后官方最终公布为准。<a href="/">返回攻略站首页 →</a>
+  </footer>
+</div>
+</body>
+</html>
